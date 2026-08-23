@@ -117,7 +117,7 @@ export default function HomePage() {
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-navy-700 group">
                 <img
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+                  src="/projects/Opic complex at Sheraton  ikeja lagos/20250404_130140.jpg"
                   alt="HORLARLEKX Building Facade Solutions"
                   className="w-full h-[380px] sm:h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />

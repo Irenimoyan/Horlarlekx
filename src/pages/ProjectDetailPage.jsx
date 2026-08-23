@@ -4,7 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Badge from '../components/Badge';
 import Button from '../components/Button';
 import ProjectLightboxModal from '../components/ProjectLightboxModal';
-import { MapPin, Calendar, Building, Clock, CheckCircle2, ArrowRight, PhoneCall, Maximize2 } from 'lucide-react';
+import { MapPin, Calendar, Building, Clock, CheckCircle2, ArrowRight, PhoneCall, Maximize2, Video, Play } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 import { companyInfo } from '../data/companyInfo';
 
@@ -36,6 +36,12 @@ export default function ProjectDetailPage() {
             <span className="text-xs text-slate-400 font-mono bg-navy-900 px-3 py-1 rounded-full border border-navy-800">
               {project.projectType}
             </span>
+            {project.videos && project.videos.length > 0 && (
+              <span className="text-xs text-amber-300 font-semibold bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/30 flex items-center space-x-1">
+                <Video className="w-3.5 h-3.5 text-amber-400" />
+                <span>{project.videos.length} Video{project.videos.length > 1 ? 's' : ''} Included</span>
+              </span>
+            )}
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight">
@@ -71,7 +77,7 @@ export default function ProjectDetailPage() {
               className="absolute bottom-4 right-4 bg-navy-950/90 text-white px-4 py-2 rounded-lg border border-navy-700 flex items-center space-x-2 text-xs font-bold hover:bg-brand-orange transition-colors shadow-lg"
             >
               <Maximize2 className="w-4 h-4" />
-              <span>Open Lightbox Gallery ({project.images.length} Photos)</span>
+              <span>Open Lightbox Gallery ({project.images.length} Photos{project.videos?.length ? `, ${project.videos.length} Videos` : ''})</span>
             </button>
           </div>
         </div>
@@ -105,6 +111,52 @@ export default function ProjectDetailPage() {
                 </p>
               </div>
             </div>
+
+            {/* Video Showcase Section */}
+            {project.videos && project.videos.length > 0 && (
+              <div className="space-y-4 pt-6 border-t border-navy-800">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="p-2 rounded-lg bg-brand-orange/20 text-brand-orange border border-brand-orange/30">
+                      <Video className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white font-heading">
+                      Project Video Walkthroughs ({project.videos.length})
+                    </h3>
+                  </div>
+                  <span className="text-xs text-amber-300 font-mono bg-navy-900 px-3 py-1 rounded-full border border-amber-500/30">
+                    On-Site Media
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                  {project.videos.map((vidSrc, idx) => (
+                    <div
+                      key={idx}
+                      className="group relative bg-navy-900 rounded-2xl overflow-hidden border border-navy-800 shadow-xl transition-all hover:border-brand-orange/50"
+                    >
+                      <div className="relative aspect-video bg-black flex items-center justify-center">
+                        <video
+                          src={vidSrc}
+                          controls
+                          muted
+                          playsInline
+                          preload="metadata"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="p-3.5 flex items-center justify-between text-xs text-slate-300 bg-navy-950/90 border-t border-navy-800">
+                        <div className="flex items-center space-x-2 font-medium">
+                          <Play className="w-4 h-4 text-brand-orange fill-brand-orange" />
+                          <span>On-Site Recording #{idx + 1}</span>
+                        </div>
+                        <span className="text-slate-400 font-mono text-[10px] uppercase">MP4 Video</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Image Gallery Grid */}
             <div className="space-y-4 pt-4">
@@ -153,6 +205,20 @@ export default function ProjectDetailPage() {
                   <span className="text-slate-400 block font-mono">TIMELINE DURATION:</span>
                   <span className="text-slate-200 font-semibold text-sm">{project.duration}</span>
                 </div>
+
+                {project.projectDates && (
+                  <div>
+                    <span className="text-slate-400 block font-mono">PROJECT DATES:</span>
+                    <span className="text-slate-200 font-semibold text-sm">{project.projectDates}</span>
+                  </div>
+                )}
+
+                {project.delivery && (
+                  <div>
+                    <span className="text-slate-400 block font-mono">DELIVERY STATUS:</span>
+                    <span className="text-slate-200 font-semibold text-sm">{project.delivery}</span>
+                  </div>
+                )}
               </div>
 
               <div className="pt-4 border-t border-navy-800">

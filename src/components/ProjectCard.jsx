@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Calendar, ExternalLink, Maximize2 } from 'lucide-react';
+import { MapPin, Calendar, ExternalLink, Maximize2, Video } from 'lucide-react';
 import Badge from './Badge';
 
 export default function ProjectCard({ project, onOpenLightbox, className = '' }) {
@@ -17,11 +17,19 @@ export default function ProjectCard({ project, onOpenLightbox, className = '' })
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent opacity-90 group-hover:opacity-75 transition-opacity" />
 
         {/* Top Badges */}
-        <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+        <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10 gap-2">
           <Badge variant="orange" size="sm">{project.category}</Badge>
-          <div className="flex items-center space-x-1 text-slate-300 text-xs bg-navy-950/80 backdrop-blur-md px-2.5 py-1 rounded-full border border-navy-800">
-            <Calendar className="w-3 h-3 text-brand-orange" />
-            <span>{project.year}</span>
+          <div className="flex items-center space-x-2">
+            {project.videos && project.videos.length > 0 && (
+              <div className="flex items-center space-x-1 text-xs text-amber-300 bg-navy-950/90 backdrop-blur-md px-2.5 py-1 rounded-full border border-amber-400/40">
+                <Video className="w-3 h-3 text-amber-400" />
+                <span className="font-semibold text-[10px]">Video</span>
+              </div>
+            )}
+            <div className="flex items-center space-x-1 text-slate-300 text-xs bg-navy-950/80 backdrop-blur-md px-2.5 py-1 rounded-full border border-navy-800">
+              <Calendar className="w-3 h-3 text-brand-orange" />
+              <span>{project.year}</span>
+            </div>
           </div>
         </div>
 

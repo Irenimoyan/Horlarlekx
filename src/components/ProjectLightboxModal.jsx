@@ -77,7 +77,7 @@ export default function ProjectLightboxModal({ project, onClose }) {
             <img
               src={currentMedia.src}
               alt={`${project.title} view ${activeMediaIndex + 1}`}
-              className="max-h-[60vh] max-w-full object-contain"
+              className="max-h-[60vh] max-w-full object-contain block mx-auto"
             />
           )}
 

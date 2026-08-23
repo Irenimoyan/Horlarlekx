@@ -66,11 +66,11 @@ export default function ProjectDetailPage() {
 
         {/* Main Project Hero Image */}
         <div className="py-8">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-navy-700 max-h-[500px]">
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-navy-700 aspect-[16/9] max-h-[500px] bg-navy-950">
             <img
               src={project.images[0]}
               alt={project.title}
-              className="w-full h-full object-cover object-center"
+              className="block w-full h-full object-cover object-center"
             />
             <button
               onClick={() => setLightboxOpen(true)}
@@ -166,9 +166,9 @@ export default function ProjectDetailPage() {
                   <div
                     key={idx}
                     onClick={() => setLightboxOpen(true)}
-                    className="relative rounded-xl overflow-hidden border border-navy-800 cursor-pointer group h-40 bg-navy-950"
+                    className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-navy-800 cursor-pointer group bg-navy-950"
                   >
-                    <img src={img} alt="gallery thumbnail" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src={img} alt="gallery thumbnail" className="block w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     <div className="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <Maximize2 className="w-6 h-6 text-white" />
                     </div>

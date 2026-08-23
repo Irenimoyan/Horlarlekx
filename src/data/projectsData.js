@@ -13,10 +13,40 @@ export const projectCategories = [
 
 export const projectsData = [
   {
+    id: "proj-sany-fatgbems",
+    title: "SANY Machinery Corporate Facade Cladding & Signage",
+    slug: "sany-machinery-fatgbems-facade-cladding-signage",
+    location: "Fatgbems Commercial Complex, Berger / Ikeja, Lagos State",
+    year: "2026",
+    category: "ACP/ALUCOBOND",
+    projectType: "Industrial Corporate Facade & Signage",
+    client: "SANY Heavy Machinery / Fatgbems",
+    projectDates: "2026",
+    delivery: "Completed on Schedule",
+    duration: "4 Weeks",
+    shortDescription: "Heavy-duty red and white ACP composite panel cladding, pylon signs, and illuminated corporate branding for SANY showroom.",
+    overview: "Landmark corporate facade transformation for SANY Heavy Machinery at the Fatgbems commercial complex in Lagos. HORLARLEKX engineered and installed precision-bent composite panels and 3D illuminated pylon signs to enhance brand prominence.",
+    challenge: "Covering massive structural steel framework with high-gloss red and white composite panels resistant to heavy traffic grime and UV fading.",
+    solution: "Utilized premium PVDF-coated exterior composite cladding panels anchored onto heavy-duty galvanized steel sub-frames.",
+    servicesProvided: ["ACP Cladding Panels (ALUCOBOND)", "Pylon Signs", "Signage", "Steel Sub-framing"],
+    images: [
+      "/projects/Sany company  cladding board  and signages   at Fatgbems/Snapchat-1621849826.jpg",
+      "/projects/Sany company  cladding board  and signages   at Fatgbems/Snapchat-208395984.jpg",
+      "/projects/Sany company  cladding board  and signages   at Fatgbems/Snapchat-726754892.jpg"
+    ],
+    videos: [
+      "/projects/Sany company  cladding board  and signages   at Fatgbems/Snapchat-10969551.mp4",
+      "/projects/Sany company  cladding board  and signages   at Fatgbems/Snapchat-1253105006.mp4",
+      "/projects/Sany company  cladding board  and signages   at Fatgbems/Snapchat-1912676678.mp4",
+      "/projects/Sany company  cladding board  and signages   at Fatgbems/Snapchat-256278716.mp4",
+      "/projects/Sany company  cladding board  and signages   at Fatgbems/Snapchat-706510665.mp4"
+    ]
+  },
+  {
     id: "proj-abraham-adesanya",
     title: "ACP Cladding Panel (ALUCOBOND) Installation",
     slug: "acp-cladding-abraham-adesanya-housing-complex",
-    location: "Abraham Adesanya Housing Complex, Off Lekki-Epe Expressway, Ajah, Lagos State",
+    location: "Abraham Adesanya Housing Complex, Ajah, Lagos State",
     year: "2026",
     category: "ACP/ALUCOBOND",
     projectType: "Residential Facade Cladding",
@@ -31,7 +61,7 @@ export const projectsData = [
     servicesProvided: ["ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "On-Site Fabrication", "3D Architectural Fitting"],
     images: [
       "/projects/abraham-adesanya/img-1.jpg",
-      "/projects/abraham-adesanya/img-2.jpg",
+      "/projects/abraham-adesanya/img-2.jpg"
     ],
     videos: [
       "/projects/abraham-adesanya/VID-20260620-WA0034.mp4",
@@ -54,13 +84,15 @@ export const projectsData = [
     servicesProvided: ["ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "Aluminium Works", "Structural Framing"],
     duration: "5 Weeks",
     images: [
+      "/projects/nnewi/IMG-20260422-WA0064.jpeg",
       "/projects/nnewi/20260427_075706.jpg",
-      "/projects/nnewi/20260428_155600.jpg",
-      "/projects/nnewi/20260428_155535.jpg",
+      "/projects/nnewi/20251222_175101.jpg",
       "/projects/nnewi/20251222_175104.jpg",
       "/projects/Nnewi glass and cladding/20251112_171212.jpg",
       "/projects/Nnewi glass and cladding/20251113_160520.jpg",
-      "/projects/Nnewi glass and cladding/20251216_160335.jpg"
+      "/projects/Nnewi glass and cladding/20251216_160335.jpg",
+      "/projects/Nnewi glass and cladding/20251218_180549.jpg",
+      "/projects/Nnewi glass and cladding/20251219_203623.jpg"
     ],
     videos: [
       "/projects/Nnewi glass and cladding/VID-20260806-WA0010.mp4",
@@ -69,6 +101,143 @@ export const projectsData = [
       "/projects/Nnewi glass and cladding/20251216_170242.mp4",
       "/projects/Nnewi glass and cladding/VID-20260806-WA0012.mp4",
       "/projects/Nnewi glass and cladding/VID-20260806-WA0013.mp4"
+    ]
+  },
+  {
+    id: "proj-shoken-supermarket",
+    title: "Shokem Supermarket Commercial Facade Transformation",
+    slug: "shokem-supermarket-apete-facade-transformation",
+    location: "Apete, Ibadan, Oyo State",
+    year: "2024",
+    category: "General Construction",
+    projectType: "Commercial Supermarket Facade",
+    client: "Shokem Supermarket",
+    shortDescription: "Complete exterior building renovation, modern ACP cladding, entrance archway, and retail storefront fitting in Apete.",
+    overview: "Major commercial retail elevation project in Apete, Ibadan. HORLARLEKX cladded the entire supermarket frontage with durable composite panels and fitted modern display windows.",
+    challenge: "Modernizing an old structural brick facade into a sleek, attractive commercial retail storefront.",
+    solution: "Built a customized structural steel grid overlay over the existing masonry, allowing seamless ACP panel alignment and integrated fascia lighting.",
+    servicesProvided: ["ACP Cladding Panels", "General Construction", "Aluminium Glass Works", "Signage"],
+    duration: "4 Weeks",
+    images: [
+      "/projects/Shoken Supermarket  apete/20241226_183008.jpg",
+      "/projects/Shoken Supermarket  apete/20241210_155341.jpg",
+      "/projects/Shoken Supermarket  apete/20241215_184843.jpg",
+      "/projects/Shoken Supermarket  apete/20241224_111258.jpg",
+      "/projects/Shoken Supermarket  apete/20241224_152016.jpg",
+      "/projects/Shoken Supermarket  apete/Snapchat-1539795389.jpg"
+    ]
+  },
+  {
+    id: "proj-oju-ore-slot",
+    title: "Slot Store Oju-Ore Facade Cladding & Corporate Branding",
+    slug: "slot-store-oju-ore-facade-cladding-signage",
+    location: "Oju-Ore, Ota, Ogun State",
+    year: "2025",
+    category: "Signage",
+    projectType: "Retail Facade & Commercial Branding",
+    client: "Slot Systems Limited",
+    shortDescription: "Exterior ACP composite panel cladding, illuminated red LED 3D letter signage, and retail storefront branding at Oju-Ore.",
+    overview: "Full retail storefront elevation project for Slot Oju-Ore outlet. Scope included mounting weather-resistant red composite cladding panels and high-illumination 3D corporate signage.",
+    challenge: "Installing high-visibility commercial signage on a busy highway intersection with minimal disruption to store operations.",
+    solution: "Deployed night-shift installation crews for structural frame mounting and pre-assembled LED channel letter sign modules.",
+    servicesProvided: ["ACP Cladding Panels", "Signage", "Retail Branding", "3D Lettering"],
+    duration: "2 Weeks",
+    images: [
+      "/projects/Oju ore slot/20250225_175700.jpg",
+      "/projects/Oju ore slot/20250225_175810.jpg",
+      "/projects/Oju ore slot/20250226_174632.jpg",
+      "/projects/Oju ore slot/20250226_174704.jpg"
+    ]
+  },
+  {
+    id: "proj-slot-panseke",
+    title: "Slot Panseke Road Retail Store Facade & Signage",
+    slug: "slot-panseke-road-abeokuta-facade-signage",
+    location: "Panseke Road, Abeokuta, Ogun State",
+    year: "2024",
+    category: "Signage",
+    projectType: "Retail Outlet Facade & Branding",
+    client: "Slot Systems Limited",
+    shortDescription: "Modern retail store exterior cladding, 3D brand logo signage, and entrance elevation along Panseke Road.",
+    overview: "Turnkey exterior branding project for Slot's prime retail store in Abeokuta. Scope included dark and red ACP panel cladding, 3D acrylic LED illuminated signage, and aluminum trim.",
+    challenge: "Fabricating high-impact retail signage visible to vehicular traffic from both directions on Panseke Road.",
+    solution: "Mounted double-faced 3D channel letters with internal weatherproof LED modules on a cantilevered ACP fascia structure.",
+    servicesProvided: ["Signage", "ACP Cladding Panels", "Retail Branding"],
+    duration: "2 Weeks",
+    images: [
+      "/projects/Slot abeokuta panseke road/20240904_184527.jpg"
+    ],
+    videos: [
+      "/projects/Slot abeokuta panseke road/Snapchat-1540145704.mp4",
+      "/projects/Slot abeokuta panseke road/Snapchat-1744398134.mp4"
+    ]
+  },
+  {
+    id: "proj-aluminum-windows",
+    title: "High-Performance Aluminium Window & Glazing Systems",
+    slug: "aluminum-windows-and-glazing-systems",
+    location: "Lagos State",
+    year: "2026",
+    category: "Aluminium",
+    projectType: "Architectural Window Installation",
+    client: "Residential & Commercial Clients",
+    shortDescription: "Custom precision-engineered aluminium window frames, sliding glass systems, and weather-sealed architectural fittings.",
+    overview: "Turnkey fabrication and installation of high-grade aluminium window systems, noise-dampening glass panes, and custom weather-sealed frames for residential and commercial property developments.",
+    challenge: "Fitting precision aluminium window casements to non-standard masonry openings while maintaining zero-leakage weather seals.",
+    solution: "Utilized heavy-duty extruded aluminium profiles with multi-point locking mechanisms and silicone weather barriers.",
+    servicesProvided: ["Aluminium Works", "Glass Installation", "Window & Door Systems"],
+    duration: "3 Weeks",
+    images: [
+      "/projects/Aluminum Windows/IMG-20260806-WA0006.jpg",
+      "/projects/Aluminum Windows/IMG-20260805-WA0109.jpg",
+      "/projects/Aluminum Windows/IMG-20260806-WA0051.jpg",
+      "/projects/Aluminum Windows/IMG-20260806-WA0052.jpg",
+      "/projects/Aluminum Windows/IMG-20260806-WA0053.jpg"
+    ]
+  },
+  {
+    id: "proj-atan-carpentry-gerard",
+    title: "Atan Gerard Stone-Coated Roofing & Timber Truss Carpentry",
+    slug: "atan-gerard-stone-coated-roofing-carpentry",
+    location: "Atan, Ogun State",
+    year: "2026",
+    category: "Roofing",
+    projectType: "Residential Roofing & Carpentry",
+    client: "Private Residential Client",
+    shortDescription: "Structural hardwood timber roof truss fabrication and Gerard stone-coated roof tile installation in Atan.",
+    overview: "Complete roof framing and covering project in Atan featuring custom-treated wood timber trusses, facial boards, and leak-proof Gerard stone-coated steel roof tiles.",
+    challenge: "Constructing high-pitch roof timber frames with long span bracing to resist tropical storms and heavy downpours.",
+    solution: "Engineered heavy-gauge treated timber rafters reinforced with steel hurricane straps and topped with premium stone-coated roofing tiles.",
+    servicesProvided: ["Roofing", "Carpentry", "Timber Trussing", "Gerard Roof Tiles"],
+    duration: "3 Weeks",
+    images: [
+      "/projects/Atan carpentry and Gerard roof/IMG-20260821-WA0031.jpg",
+      "/projects/Atan carpentry and Gerard roof/IMG-20260821-WA0030.jpg",
+      "/projects/Atan carpentry and Gerard roof/IMG-20260821-WA0032.jpg",
+      "/projects/Atan carpentry and Gerard roof/IMG-20260821-WA0036.jpg"
+    ]
+  },
+  {
+    id: "proj-shower-cubicle",
+    title: "Frameless Toughened Glass Shower Cubicle Enclosures",
+    slug: "frameless-toughened-glass-shower-cubicle-enclosures",
+    location: "Lagos State",
+    year: "2026",
+    category: "Glass",
+    projectType: "Luxury Interior Glass Installation",
+    client: "Residential & Hotel Developers",
+    shortDescription: "10mm frameless toughened safety glass shower cubicles with stainless steel sliding fittings and leak-proof magnetic seals.",
+    overview: "Precision interior glass project delivering custom luxury shower enclosures with brushed stainless steel hardware, heavy-duty hinges, and water-tight silicone seals.",
+    challenge: "Achieving perfect vertical glass alignment against non-plumb tiled bathroom walls.",
+    solution: "Utilized laser wall profiling and custom-cut 10mm tempered glass panels with adjustable stainless steel wall clamps.",
+    servicesProvided: ["Glass Works", "Shower Cubicles", "Interior Glazing"],
+    duration: "2 Weeks",
+    images: [
+      "/projects/Shower cubicle/IMG-20260806-WA0016.jpg",
+      "/projects/Shower cubicle/IMG-20260806-WA0015.jpg",
+      "/projects/Shower cubicle/IMG-20260806-WA0017.jpg",
+      "/projects/Shower cubicle/IMG-20260806-WA0018.jpg",
+      "/projects/Shower cubicle/IMG-20260806-WA0019.jpg"
     ]
   },
   {
@@ -111,8 +280,8 @@ export const projectsData = [
     servicesProvided: ["ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "On-Site Fabrication", "Structural Steel Welding"],
     duration: "4 Weeks",
     images: [
-      "/projects/Egbeda akowojo/20250704_184618.jpg",
       "/projects/Egbeda akowojo/20250704_191505.jpg",
+      "/projects/Egbeda akowojo/20250704_184618.jpg",
       "/projects/Egbeda akowojo/IMG-20250630-WA0010.jpg",
       "/projects/Egbeda akowojo/IMG-20250630-WA0011.jpg"
     ],
@@ -139,9 +308,9 @@ export const projectsData = [
     duration: "3 Weeks",
     images: [
       "/projects/Cotton wall glass/IMG-20260805-WA0108.jpg",
-      "/projects/Cotton wall glass/IMG-20260805-WA0118.jpg",
-      "/projects/Cotton wall glass/IMG-20260805-WA0119.jpg",
-      "/projects/Cotton wall glass/IMG-20260805-WA0120.jpg"
+      // "/projects/Cotton wall glass/IMG-20260805-WA0118.jpg",
+      // "/projects/Cotton wall glass/IMG-20260805-WA0119.jpg",
+      // "/projects/Cotton wall glass/IMG-20260805-WA0120.jpg"
     ],
     videos: [
       "/projects/Cotton wall glass/VID-20260805-WA0063.mp4"
@@ -163,11 +332,10 @@ export const projectsData = [
     servicesProvided: ["Aluminium Roofing", "Structural Framing", "General Construction", "Metal Works"],
     duration: "4 Weeks",
     images: [
-      "/projects/CAC church  ijaye/20250715_173953.jpg",
-      "/projects/CAC church  ijaye/20250715_173956.jpg",
-      "/projects/CAC church  ijaye/20250715_174008.jpg",
+      "/projects/CAC church  ijaye/20250722_141605.jpg",
       "/projects/CAC church  ijaye/20250722_141558.jpg",
-      "/projects/CAC church  ijaye/20250722_141605.jpg"
+      "/projects/CAC church  ijaye/20250715_173956.jpg",
+      "/projects/CAC church  ijaye/20250715_174008.jpg"
     ],
     videos: [
       "/projects/CAC church  ijaye/20250715_174011.mp4",
@@ -190,73 +358,14 @@ export const projectsData = [
     servicesProvided: ["Aluminium Works", "Glass Installation", "Building Facade Solutions"],
     duration: "3 Weeks",
     images: [
-      "/projects/AKOKA/IMG-20260821-WA0062.jpg",
+      "/projects/AKOKA/IMG-20260821-WA0061.jpg",
+      "/projects/AKOKA/IMG-20260821-WA0092.jpg",
       "/projects/AKOKA/IMG-20260821-WA0085.jpg",
-      "/projects/AKOKA/IMG-20260821-WA0092.jpg"
+      "/projects/AKOKA/IMG-20260821-WA0062.jpg"
     ],
     videos: [
       "/projects/AKOKA/VID-20260821-WA0068.mp4",
       "/projects/AKOKA/VID-20260821-WA0103.mp4"
-    ]
-  },
-  {
-    id: "proj-02",
-    title: "Ikeja Commercial Plaza Pylon & 3D Signage System",
-    slug: "ikeja-commercial-plaza-pylon-3d-signage",
-    location: "Ikeja, Lagos State",
-    year: "2024",
-    category: "Signage",
-    projectType: "Commercial Signage & Branding",
-    client: "Plaza Management",
-    shortDescription: "12-meter double-sided roadside pylon sign and 3D illuminated stainless steel channel letters for plaza tenant directory.",
-    overview: "Design, structural steel welding, cladding enclosure, and high-intensity LED backlighting for a landmark commercial shopping hub in Ikeja.",
-    challenge: "High wind exposure along the major traffic artery required structural calculations and foundation concrete anchoring capable of resisting gale force winds.",
-    solution: "Constructed an internal 150mm heavy steel cage foundation cladded in weather-tight dark blue composite panels housing energy-efficient IP67 LED modules.",
-    servicesProvided: ["Pylon Signs", "Signage Systems", "Metal Works", "Corporate Branding"],
-    duration: "3 Weeks",
-    images: [
-      "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    id: "proj-06",
-    title: "Ottah Gateway 3D Facade Rendering & Realization",
-    slug: "ottah-gateway-3d-facade-rendering-realization",
-    location: "Otta / Atan, Ogun State",
-    year: "2024",
-    category: "3D Designs",
-    projectType: "Commercial Hub Redesign",
-    client: "Industrial Park Client",
-    shortDescription: "Full 3D digital architectural simulation translated directly into precise physical ACP cladding and signage.",
-    overview: "Started from client floorplans to generate 3D daytime and night LED lighting renders, culminating in exact on-site fabrication.",
-    challenge: "Helping non-technical board members visualize complex curved facade panels prior to capital deployment.",
-    solution: "Delivered 360-degree 3D architectural renders and physical material sample boards before commencing fabrication.",
-    servicesProvided: ["3D Architectural Designs", "ACP Cladding Panels", "Pylon Signs"],
-    duration: "5 Weeks",
-    images: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  {
-    id: "proj-07",
-    title: "Agege Executive Office Fit-Out & Furniture Fabrication",
-    slug: "agege-executive-office-fit-out-furniture",
-    location: "Agege, Lagos State",
-    year: "2025",
-    category: "Carpentry",
-    projectType: "Corporate Interior Finishing",
-    client: "Financial Advisory Firm",
-    shortDescription: "Custom reception counter, executive boardroom timber wall paneling, and acoustic suspended ceilings.",
-    overview: "Turnkey interior carpentry and finishing contract including custom hardwood executive desks, wall paneling, and POP ceiling features.",
-    challenge: "Integrating wiring, acoustic dampening, and custom corporate branding into a compact floorplan.",
-    solution: "Designed modular wall paneling with hidden cabling troughs and concealed warm light coves.",
-    servicesProvided: ["Carpentry Works", "Custom Furniture", "Suspended Ceilings", "Building Finishing"],
-    duration: "3 Weeks",
-    images: [
-      "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80"
     ]
   }
 ];

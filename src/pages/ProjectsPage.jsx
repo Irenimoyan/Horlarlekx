@@ -34,7 +34,7 @@ export default function ProjectsPage() {
 
         {/* Categories Bar */}
         <div className="py-8">
-          <div className="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none">
+          <div className="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none w-full max-w-full min-w-0">
             {projectCategories.map((category) => (
               <button
                 key={category}

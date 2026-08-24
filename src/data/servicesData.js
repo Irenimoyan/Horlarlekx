@@ -16,9 +16,7 @@ export const servicesData = [
       "Subtle weather-sealed silicon caulking"
     ],
     applications: ["Corporate Head Offices", "Shopping Malls", "Automobile Showrooms", "Commercial Towers", "Luxury Residences"],
-    image: [
-      "/projects/abraham-adesanya/img-1.jpg",
-    ]
+    image: "/projects/abraham-adesanya/img-1.jpg"
   },
   {
     id: "exterior-cladding",
@@ -36,7 +34,7 @@ export const servicesData = [
       "Custom panel perforations & geometric layouts"
     ],
     applications: ["Banks & Financial Hubs", "Hotels & Resorts", "Private Mansions", "Educational Institutions"],
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/Oju ore slot/20250225_175700.jpg"
   },
   {
     id: "facade-solutions",
@@ -54,7 +52,7 @@ export const servicesData = [
       "LED lighting channel integration"
     ],
     applications: ["Plazas & Commercial Complexes", "Modern Office Parks", "Mixed-Use Developments"],
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/Shoken Supermarket  apete/20241226_183008.jpg"
   },
   {
     id: "3d-designs",
@@ -72,7 +70,7 @@ export const servicesData = [
       "Client design revisions & color options"
     ],
     applications: ["Project Pitching", "Client Approvals", "Architectural Consultations"],
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/nnewi/IMG-20251023-WA0037.jpg"
   },
   {
     id: "floating-panels",
@@ -90,7 +88,7 @@ export const servicesData = [
       "Lightweight alloy construction"
     ],
     applications: ["Hotel Entrances", "Executive Office Suites", "Modern Villas"],
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/Opic complex at Sheraton  ikeja lagos/20250404_130148.jpg"
   },
   {
     id: "signage",
@@ -108,26 +106,26 @@ export const servicesData = [
       "UV-protected outdoor sign finishes"
     ],
     applications: ["Corporate Headquarters", "Retail Stores", "Hospitals & Clinics", "Restaurants & Lounges"],
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/Oju ore slot/20250225_175810.jpg"
   },
-  {
-    id: "pylon-signs",
-    slug: "pylon-signs",
-    title: "Pylon Signs",
-    iconName: "TowerControl",
-    category: "Signage & Branding",
-    isFeatured: true,
-    shortDescription: "Freestanding roadside pylon structures and totem signage built for maximum highway and avenue visibility.",
-    fullDescription: "Engineered to withstand heavy wind loads, our custom pylon signs and monopoles provide prominent roadside presence for corporate plazas, fuel stations, malls, and industrial parks across Nigeria.",
-    features: [
-      "Reinforced heavy-gauge structural steel cores",
-      "Aluminium composite outer cladding enclosure",
-      "Double-sided energy-efficient LED display panels",
-      "Custom heights and tenant directory slots"
-    ],
-    applications: ["Shopping Plazas", "Corporate Campuses", "Filling Stations", "Industrial Parks"],
-    image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=1000&q=80"
-  },
+  // {
+  //   id: "pylon-signs",
+  //   slug: "pylon-signs",
+  //   title: "Pylon Signs",
+  //   iconName: "TowerControl",
+  //   category: "Signage & Branding",
+  //   isFeatured: true,
+  //   shortDescription: "Freestanding roadside pylon structures and totem signage built for maximum highway and avenue visibility.",
+  //   fullDescription: "Engineered to withstand heavy wind loads, our custom pylon signs and monopoles provide prominent roadside presence for corporate plazas, fuel stations, malls, and industrial parks across Nigeria.",
+  //   features: [
+  //     "Reinforced heavy-gauge structural steel cores",
+  //     "Aluminium composite outer cladding enclosure",
+  //     "Double-sided energy-efficient LED display panels",
+  //     "Custom heights and tenant directory slots"
+  //   ],
+  //   applications: ["Shopping Plazas", "Corporate Campuses", "Filling Stations", "Industrial Parks"],
+  //   image: "public/projects/Exterior-Large-Aluminium-Wayfinding-LED-Pylon-Sign.webp"
+  // },
   {
     id: "aluminium-works",
     slug: "aluminium-works",
@@ -144,7 +142,7 @@ export const servicesData = [
       "Custom mullion & transom configurations"
     ],
     applications: ["Residential Apartments", "Commercial Offices", "Schools & Warehouses"],
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/Cotton wall glass/IMG-20260805-WA0120.jpg"
   },
   {
     id: "glass-installation",
@@ -162,7 +160,7 @@ export const servicesData = [
       "Weather-sealed expansion joints"
     ],
     applications: ["Bank Showrooms", "Luxury Boutiques", "Corporate Atriums"],
-    image: "https://images.unsplash.com/photo-1508873696983-2df5057c0256?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/Cotton wall glass/IMG-20260806-WA0034.jpg"
   },
   {
     id: "glass-railings",
@@ -180,7 +178,7 @@ export const servicesData = [
       "Impact safety certified"
     ],
     applications: ["Residential Balconies", "Mezzanine Floors", "Staircases", "Poolside Fencing"],
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/glass railing.jpg"
   },
   {
     id: "aluminium-roofing",
@@ -198,7 +196,7 @@ export const servicesData = [
       "Complete ridge caps, facial board & gutter fittings"
     ],
     applications: ["Residential Estates", "Churches & Auditoriums", "Factories"],
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/Atan carpentry and Gerard roof/IMG-20260821-WA0031.jpg"
   },
   {
     id: "carpentry-works",
@@ -216,7 +214,7 @@ export const servicesData = [
       "Termite and fungal treatment applications"
     ],
     applications: ["Executive Residences", "Private Boardrooms", "Hotels"],
-    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/Atan carpentry and Gerard roof/IMG-20260821-WA0036.jpg"
   },
   {
     id: "furniture-fabrication",
@@ -234,7 +232,7 @@ export const servicesData = [
       "Durable edge-banded HDF finishes"
     ],
     applications: ["Corporate Workspaces", "Residential Kitchens & Wardrobes", "Retail Fronts"],
-    image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/furniture-manufacturin.jpg"
   },
   {
     id: "metal-works",
@@ -252,7 +250,7 @@ export const servicesData = [
       "Anti-rust primer & epoxy paint finish"
     ],
     applications: ["Industrial Facilities", "Commercial Entrances", "Private Estates"],
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/Egbeda akowojo/20250704_184618.jpg"
   },
   {
     id: "suspended-ceilings",
@@ -270,7 +268,7 @@ export const servicesData = [
       "Recessed spotlight & chandelier framing"
     ],
     applications: ["Event Halls", "Modern Living Rooms", "Conference Rooms"],
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/pop.jpg"
   },
   {
     id: "general-contracting",
@@ -288,7 +286,7 @@ export const servicesData = [
       "Single-point accountability for building owners"
     ],
     applications: ["Full Building Renovations", "Commercial Fit-Outs", "Residential Builds"],
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/AKOKA/IMG-20260821-WA0053.jpg"
   },
   {
     id: "building-finishing",
@@ -306,24 +304,6 @@ export const servicesData = [
       "Waterproofing sealants for wet areas"
     ],
     applications: ["Luxury Villas", "Corporate Plazas", "Hospitality Units"],
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80"
-  },
-  {
-    id: "corporate-branding",
-    slug: "corporate-commercial-branding",
-    title: "Corporate & Commercial Branding",
-    iconName: "Megaphone",
-    category: "Signage & Branding",
-    isFeatured: false,
-    shortDescription: "Architectural brand integration, vinyl window graphics, wall wraps, and exterior facade branding.",
-    fullDescription: "Seamlessly align your physical property with your corporate visual identity. We implement exterior building logos, brand colors in ACP panels, directional signs, and glass frostings.",
-    features: [
-      "Custom brand color matching on facade materials",
-      "Etched glass frosted film for office privacy",
-      "Building wall graphics & outdoor banners",
-      "Illuminated entry portal branding"
-    ],
-    applications: ["Bank Branches", "Corporate Offices", "Automobile Dealerships"],
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1000&q=80"
+    image: "/projects/Nnewi glass and cladding/20251225_055313.jpg"
   }
 ];

@@ -7,6 +7,7 @@ import ProjectLightboxModal from '../components/ProjectLightboxModal';
 import { MapPin, Calendar, Building, Clock, CheckCircle2, ArrowRight, PhoneCall, Maximize2, Video, Play } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 import { companyInfo } from '../data/companyInfo';
+import { getOptimizedImageUrl } from '../utils/imageHelper';
 
 export default function ProjectDetailPage() {
   const { slug } = useParams();
@@ -68,9 +69,11 @@ export default function ProjectDetailPage() {
         <div className="py-8">
           <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-navy-700 aspect-[16/9] max-h-[500px] bg-navy-950">
             <img
-              src={project.images[0]}
+              src={getOptimizedImageUrl(project.images[0], 'full')}
               alt={project.title}
-              className="block w-full h-full object-cover object-center"
+              className="block w-full h-full object-cover object-center max-w-full"
+              fetchpriority="high"
+              decoding="async"
             />
             <button
               onClick={() => setLightboxOpen(true)}
@@ -168,7 +171,13 @@ export default function ProjectDetailPage() {
                     onClick={() => setLightboxOpen(true)}
                     className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-navy-800 cursor-pointer group bg-navy-950"
                   >
-                    <img src={img} alt="gallery thumbnail" className="block w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img
+                      src={getOptimizedImageUrl(img, 'thumb')}
+                      alt={`Gallery thumbnail ${idx + 1}`}
+                      className="block w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 max-w-full"
+                      loading="lazy"
+                      decoding="async"
+                    />
                     <div className="absolute inset-0 bg-navy-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <Maximize2 className="w-6 h-6 text-white" />
                     </div>

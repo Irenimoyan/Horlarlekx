@@ -43,7 +43,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full max-w-full">
       {/* Top bar */}
       <div className="bg-navy-950 text-slate-300 text-xs py-2 border-b border-navy-800 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -90,8 +90,8 @@ export default function Navbar() {
       <div className={`transition-all duration-300 ${isScrolled ? 'glass-nav py-3 shadow-navy-lg' : 'bg-navy-900/90 backdrop-blur-md py-4 border-b border-navy-800'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo Branding */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="bg-white p-1 rounded-xl shadow-lg border border-brand-orange/40 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+          <Link to="/" className="flex items-center space-x-3 group min-w-0">
+            <div className="bg-white p-1 rounded-xl shadow-lg border border-brand-orange/40 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center shrink-0">
               <img
                 src="/logo.jpg"
                 alt="HORLARS SERVICES Logo"
@@ -99,11 +99,11 @@ export default function Navbar() {
               />
             </div>
 
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base sm:text-lg md:text-xl text-white tracking-tight leading-tight group-hover:text-brand-orange transition-colors">
+            <div className="flex flex-col min-w-0">
+              <span className="font-extrabold text-base sm:text-lg md:text-xl text-white tracking-tight leading-tight group-hover:text-brand-orange transition-colors truncate">
                 HORLARS SERVICES
               </span>
-              <span className="text-[10px] md:text-[11px] font-semibold text-brand-orange tracking-wider uppercase">
+              <span className="text-[10px] md:text-[11px] font-semibold text-brand-orange tracking-wider uppercase truncate">
                 {companyInfo.tagline}
               </span>
             </div>
@@ -148,7 +148,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[60px] bg-navy-950/98 backdrop-blur-xl border-b border-navy-800 p-6 shadow-2xl transition-all duration-300 max-h-[calc(100vh-60px)] overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-[60px] bg-navy-950/98 backdrop-blur-xl border-b border-navy-800 p-6 shadow-2xl transition-all duration-300 max-h-[calc(100vh-60px)] overflow-y-auto w-full max-w-full">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <Link

@@ -7,6 +7,7 @@ import ProjectCard from '../components/ProjectCard';
 import { servicesData } from '../data/servicesData';
 import { projectsData } from '../data/projectsData';
 import { companyInfo } from '../data/companyInfo';
+import { getOptimizedImageUrl } from '../utils/imageHelper';
 import { CheckCircle2, ArrowRight, PhoneCall, ShieldCheck, Layers, Building2 } from 'lucide-react';
 
 export default function ServiceDetailPage() {
@@ -63,9 +64,11 @@ export default function ServiceDetailPage() {
           <div className="lg:col-span-5">
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-navy-700">
               <img
-                src={service.image}
+                src={getOptimizedImageUrl(service.image, 'full')}
                 alt={service.title}
-                className="w-full h-[320px] sm:h-[400px] object-cover object-center"
+                className="w-full h-[320px] sm:h-[400px] object-cover object-center max-w-full"
+                fetchpriority="high"
+                decoding="async"
               />
             </div>
           </div>

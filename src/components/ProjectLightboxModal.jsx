@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, MapPin, ExternalLink, Video, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Badge from './Badge';
+import { getOptimizedImageUrl } from '../utils/imageHelper';
 
 export default function ProjectLightboxModal({ project, onClose }) {
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
@@ -31,8 +32,8 @@ export default function ProjectLightboxModal({ project, onClose }) {
   const currentMedia = allMedia[activeMediaIndex] || allMedia[0];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-navy-950/95 backdrop-blur-md transition-opacity">
-      <div className="relative w-full max-w-5xl bg-navy-900 border border-navy-700 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-navy-950/95 backdrop-blur-md transition-opacity w-full max-w-full overflow-hidden">
+      <div className="relative w-full max-w-5xl bg-navy-900 border border-navy-700 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh] min-w-0">
         
         {/* Modal Header */}
         <div className="p-4 sm:p-6 bg-navy-950 border-b border-navy-800 flex items-center justify-between">
@@ -75,9 +76,10 @@ export default function ProjectLightboxModal({ project, onClose }) {
             />
           ) : (
             <img
-              src={currentMedia.src}
+              src={getOptimizedImageUrl(currentMedia.src, 'full')}
               alt={`${project.title} view ${activeMediaIndex + 1}`}
               className="max-h-[60vh] max-w-full object-contain block mx-auto"
+              decoding="async"
             />
           )}
 
@@ -126,7 +128,7 @@ export default function ProjectLightboxModal({ project, onClose }) {
                       <span className="text-[8px] font-mono text-slate-300">VID</span>
                     </div>
                   ) : (
-                    <img src={item.src} alt="thumbnail" className="w-full h-full object-cover" />
+                    <img src={getOptimizedImageUrl(item.src, 'thumb')} alt="thumbnail" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   )}
                 </button>
               ))}

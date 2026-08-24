@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Calendar, ExternalLink, Maximize2, Video } from 'lucide-react';
 import Badge from './Badge';
+import { getOptimizedImageUrl } from '../utils/imageHelper';
 
 export default function ProjectCard({ project, onOpenLightbox, className = '' }) {
   return (
@@ -9,10 +10,11 @@ export default function ProjectCard({ project, onOpenLightbox, className = '' })
       {/* Strict Image Container with aspect ratio & clip overflow */}
       <div className="relative w-full aspect-[16/10] overflow-hidden bg-navy-950 shrink-0 border-b border-navy-800/50">
         <img
-          src={project.images[0]}
+          src={getOptimizedImageUrl(project.images[0], 'thumb')}
           alt={project.title}
-          className="block w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+          className="block w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 max-w-full"
           loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/20 to-transparent opacity-90 group-hover:opacity-75 transition-opacity pointer-events-none" />
 

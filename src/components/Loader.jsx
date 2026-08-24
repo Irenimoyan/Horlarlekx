@@ -44,16 +44,16 @@ export default function Loader({ onFinish }) {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] bg-navy-950 flex flex-col items-center justify-center transition-all duration-500 ease-out select-none ${
+      className={`fixed inset-0 z-[9999] bg-navy-950 flex flex-col items-center justify-center transition-all duration-500 ease-out select-none w-full max-w-full overflow-hidden ${
         fadeOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none w-full max-w-full">
         <img
           src="/hero-bg.jpg"
           alt="HORLARS SERVICES Background"
-          className="w-full h-full object-cover object-center filter brightness-90 scale-105"
+          className="w-full h-full object-cover object-center filter brightness-90 scale-105 max-w-full"
         />
         <div className="absolute inset-0 bg-navy-950/65" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/80" />

@@ -34,13 +34,15 @@ export default function HomePage() {
     <div className="space-y-0">
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 overflow-hidden bg-navy-950">
+      <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 overflow-hidden bg-navy-950 w-full max-w-full">
         {/* Background Image with Cinematic Overlay */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden w-full max-w-full">
           <img
-            src="/hero-bg.jpg"
+            src="/projects/Opic complex at Sheraton  ikeja lagos/20250404_130155.webp"
             alt="HORLARLEKX Exterior Cladding & Construction Project"
-            className="w-full h-full object-cover object-center transform scale-105 filter brightness-90"
+            className="w-full h-full object-cover object-center transform scale-105 filter brightness-90 max-w-full"
+            fetchpriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 hero-overlay" />
           {/* Subtle grid pattern graphic */}
@@ -117,15 +119,17 @@ export default function HomePage() {
             <div className="lg:col-span-6 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-navy-700 group">
                 <img
-                  src="/projects/Opic complex at Sheraton  ikeja lagos/20250404_130140.jpg"
+                  src="/projects/Opic complex at Sheraton  ikeja lagos/20250404_130140.webp"
                   alt="HORLARLEKX Building Facade Solutions"
-                  className="w-full h-[380px] sm:h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[380px] sm:h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-700 max-w-full"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-60" />
               </div>
 
               {/* Floating feature card overlay */}
-              <div className="absolute -bottom-6 -right-2 sm:bottom-6 sm:-right-6 bg-navy-950/95 backdrop-blur-xl p-5 rounded-xl border border-brand-orange/40 shadow-2xl max-w-xs hidden sm:block">
+              <div className="absolute -bottom-6 right-0 sm:bottom-6 sm:right-2 lg:-right-4 bg-navy-950/95 backdrop-blur-xl p-5 rounded-xl border border-brand-orange/40 shadow-2xl max-w-xs hidden sm:block">
                 <div className="flex items-start space-x-3">
                   <div className="p-2.5 rounded-lg bg-brand-orange/20 text-brand-orange shrink-0">
                     <ShieldCheck className="w-6 h-6" />
@@ -218,7 +222,7 @@ export default function HomePage() {
           />
 
           {/* Project Category Filter Tabs */}
-          <div className="flex items-center space-x-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
+          <div className="flex items-center space-x-2 overflow-x-auto pb-4 mb-8 scrollbar-none w-full max-w-full min-w-0">
             {projectCategories.map((category) => (
               <button
                 key={category}

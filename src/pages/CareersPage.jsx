@@ -16,9 +16,21 @@ export default function CareersPage() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitted(true);
+    try {
+      await fetch("https://formspree.io/f/mdenrnzr", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+    } catch (err) {
+      console.error("Formspree submission error:", err);
+    }
   };
 
   return (
@@ -91,11 +103,12 @@ export default function CareersPage() {
                   <p className="text-xs">Thank you for submitting your details. Our human resources team will review your trade skills and contact you when relevant project roles open.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 text-sm">
+                <form action="https://formspree.io/f/mdenrnzr" method="POST" onSubmit={handleSubmit} className="space-y-4 text-sm">
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
                     <input
                       type="text"
+                      name="name"
                       required
                       placeholder="e.g. Samuel Adebayo"
                       value={formData.name}
@@ -109,6 +122,7 @@ export default function CareersPage() {
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
                       <input
                         type="tel"
+                        name="phone"
                         required
                         placeholder="08012345678"
                         value={formData.phone}
@@ -120,6 +134,7 @@ export default function CareersPage() {
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Primary Trade Discipline</label>
                       <select
+                        name="trade"
                         value={formData.trade}
                         onChange={(e) => setFormData({ ...formData, trade: e.target.value })}
                         className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white focus:outline-none focus:border-brand-orange"
@@ -139,6 +154,7 @@ export default function CareersPage() {
                     <label className="block text-xs font-semibold text-slate-300 mb-1">Current Location (City/State)</label>
                     <input
                       type="text"
+                      name="location"
                       required
                       placeholder="e.g. Lagos State / Ogun State"
                       value={formData.location}
@@ -151,6 +167,7 @@ export default function CareersPage() {
                     <label className="block text-xs font-semibold text-slate-300 mb-1">Years of Experience & Past Projects Summary</label>
                     <textarea
                       rows={3}
+                      name="experience"
                       placeholder="Briefly state your technical background..."
                       value={formData.experience}
                       onChange={(e) => setFormData({ ...formData, experience: e.target.value })}

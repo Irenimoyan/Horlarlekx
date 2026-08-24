@@ -102,9 +102,35 @@ export default function RequestQuotePage() {
     if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitted(true);
+    try {
+      await fetch("https://formspree.io/f/mdenrnzr", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          companyName: formData.companyName,
+          email: formData.email,
+          phone: formData.phone,
+          whatsappNumber: formData.whatsappNumber,
+          projectType: formData.projectType,
+          projectLocation: formData.projectLocation,
+          selectedServices: formData.selectedServices.join(', '),
+          projectDescription: formData.projectDescription,
+          estimatedMeasurements: formData.estimatedMeasurements,
+          startDate: formData.startDate,
+          estimatedBudget: formData.estimatedBudget,
+          uploadedFiles: formData.uploadedFiles.join(', ')
+        })
+      });
+    } catch (err) {
+      console.error("Formspree submission error:", err);
+    }
   };
 
   const stepsList = [
@@ -209,7 +235,21 @@ export default function RequestQuotePage() {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form action="https://formspree.io/f/mdenrnzr" method="POST" onSubmit={handleSubmit} className="space-y-6">
+              {/* Hidden Inputs for Formspree submission of all multi-step data */}
+              <input type="hidden" name="fullName" value={formData.fullName} />
+              <input type="hidden" name="companyName" value={formData.companyName} />
+              <input type="hidden" name="email" value={formData.email} />
+              <input type="hidden" name="phone" value={formData.phone} />
+              <input type="hidden" name="whatsappNumber" value={formData.whatsappNumber} />
+              <input type="hidden" name="projectType" value={formData.projectType} />
+              <input type="hidden" name="projectLocation" value={formData.projectLocation} />
+              <input type="hidden" name="selectedServices" value={formData.selectedServices.join(', ')} />
+              <input type="hidden" name="projectDescription" value={formData.projectDescription} />
+              <input type="hidden" name="estimatedMeasurements" value={formData.estimatedMeasurements} />
+              <input type="hidden" name="startDate" value={formData.startDate} />
+              <input type="hidden" name="estimatedBudget" value={formData.estimatedBudget} />
+              <input type="hidden" name="uploadedFiles" value={formData.uploadedFiles.join(', ')} />
               
               {/* STEP 1: Contact Information */}
               {currentStep === 1 && (
@@ -223,6 +263,7 @@ export default function RequestQuotePage() {
                     <label className="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
                     <input
                       type="text"
+                      name="fullName"
                       required
                       placeholder="e.g. Arc. Babatunde Johnson"
                       value={formData.fullName}
@@ -235,6 +276,7 @@ export default function RequestQuotePage() {
                     <label className="block text-xs font-semibold text-slate-300 mb-1">Company / Organization Name (Optional)</label>
                     <input
                       type="text"
+                      name="companyName"
                       placeholder="e.g. Horizon Real Estate Developments Ltd"
                       value={formData.companyName}
                       onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
@@ -247,6 +289,7 @@ export default function RequestQuotePage() {
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Email Address *</label>
                       <input
                         type="email"
+                        name="email"
                         required
                         placeholder="client@company.com"
                         value={formData.email}
@@ -259,6 +302,7 @@ export default function RequestQuotePage() {
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Phone Number *</label>
                       <input
                         type="tel"
+                        name="phone"
                         required
                         placeholder="07055534249"
                         value={formData.phone}
@@ -272,6 +316,7 @@ export default function RequestQuotePage() {
                     <label className="block text-xs font-semibold text-slate-300 mb-1">WhatsApp Number (For fast estimate chat)</label>
                     <input
                       type="tel"
+                      name="whatsappNumber"
                       placeholder="07055534249"
                       value={formData.whatsappNumber}
                       onChange={(e) => setFormData({ ...formData, whatsappNumber: e.target.value })}
@@ -313,6 +358,7 @@ export default function RequestQuotePage() {
                     <label className="block text-xs font-semibold text-slate-300 mb-1">Project Site Location *</label>
                     <input
                       type="text"
+                      name="projectLocation"
                       required
                       placeholder="e.g. Victoria Island, Lagos State / Idi Iroko Road, Ogun State"
                       value={formData.projectLocation}
@@ -374,6 +420,7 @@ export default function RequestQuotePage() {
                     <label className="block text-xs font-semibold text-slate-300 mb-1">Project Description *</label>
                     <textarea
                       rows={3}
+                      name="projectDescription"
                       required
                       placeholder="Describe the scope of work (e.g. Retrofitting 4-story commercial building exterior with silver ACP cladding)..."
                       value={formData.projectDescription}
@@ -387,6 +434,7 @@ export default function RequestQuotePage() {
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Estimated Measurements (sq.m or linear meters)</label>
                       <input
                         type="text"
+                        name="estimatedMeasurements"
                         placeholder="e.g. approx 450 sq.m facade area"
                         value={formData.estimatedMeasurements}
                         onChange={(e) => setFormData({ ...formData, estimatedMeasurements: e.target.value })}
@@ -398,6 +446,7 @@ export default function RequestQuotePage() {
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Expected Start Date</label>
                       <input
                         type="text"
+                        name="startDate"
                         placeholder="e.g. Immediately / Next Month"
                         value={formData.startDate}
                         onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
@@ -410,6 +459,7 @@ export default function RequestQuotePage() {
                     <label className="block text-xs font-semibold text-slate-300 mb-1">Estimated Budget — Optional</label>
                     <input
                       type="text"
+                      name="estimatedBudget"
                       placeholder="e.g. Open to recommendation / Budget range"
                       value={formData.estimatedBudget}
                       onChange={(e) => setFormData({ ...formData, estimatedBudget: e.target.value })}
@@ -434,7 +484,7 @@ export default function RequestQuotePage() {
 
                     <label className="mt-4 inline-flex items-center px-4 py-2 rounded-lg bg-navy-800 hover:bg-brand-orange text-xs font-bold text-white cursor-pointer transition-colors">
                       <span>Select Files to Upload</span>
-                      <input type="file" multiple onChange={handleFileUpload} className="hidden" />
+                      <input type="file" name="uploadedFiles" multiple onChange={handleFileUpload} className="hidden" />
                     </label>
 
                     {formData.uploadedFiles.length > 0 && (

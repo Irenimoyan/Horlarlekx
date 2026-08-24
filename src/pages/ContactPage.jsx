@@ -16,9 +16,21 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitted(true);
+    try {
+      await fetch("https://formspree.io/f/mdenrnzr", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+    } catch (err) {
+      console.error("Formspree submission error:", err);
+    }
   };
 
   return (
@@ -163,12 +175,13 @@ export default function ContactPage() {
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 text-sm">
+                <form action="https://formspree.io/f/mdenrnzr" method="POST" onSubmit={handleSubmit} className="space-y-4 text-sm">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
                       <input
                         type="text"
+                        name="name"
                         required
                         placeholder="e.g. Arc. Oladipo Adeleke"
                         value={formData.name}
@@ -181,6 +194,7 @@ export default function ContactPage() {
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Phone / WhatsApp</label>
                       <input
                         type="tel"
+                        name="phone"
                         required
                         placeholder="07055534249"
                         value={formData.phone}
@@ -195,6 +209,7 @@ export default function ContactPage() {
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
                       <input
                         type="email"
+                        name="email"
                         required
                         placeholder="client@company.com"
                         value={formData.email}
@@ -207,6 +222,7 @@ export default function ContactPage() {
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Subject</label>
                       <input
                         type="text"
+                        name="subject"
                         required
                         placeholder="e.g. ACP Cladding Quote Inquiry"
                         value={formData.subject}
@@ -220,6 +236,7 @@ export default function ContactPage() {
                     <label className="block text-xs font-semibold text-slate-300 mb-1">Message / Requirements</label>
                     <textarea
                       rows={4}
+                      name="message"
                       required
                       placeholder="Detail your project requirements, location, measurements, or timeline..."
                       value={formData.message}

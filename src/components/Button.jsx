@@ -18,12 +18,13 @@ export default function Button({
   const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none';
 
   const variants = {
-    primary: 'bg-brand-orange hover:bg-brand-orange-hover text-white shadow-lg shadow-brand-orange/20 hover:shadow-orange-glow border border-brand-orange',
-    secondary: 'bg-navy-800 hover:bg-navy-700 text-white border border-navy-600 hover:border-slate-400 shadow-md',
-    outline: 'bg-transparent hover:bg-navy-800/60 text-slate-200 hover:text-white border border-slate-600 hover:border-brand-orange',
-    ghost: 'bg-transparent hover:bg-navy-800/40 text-slate-300 hover:text-brand-orange',
+    primary: 'bg-cyan hover:bg-cyan-hover text-white shadow-lg shadow-cyan/20 hover:shadow-orange-glow border border-cyan',
+    secondary: 'bg-navy-800 hover:bg-navy-700 text-white border border-navy-700 hover:border-cyan/50 shadow-md',
+    outline: 'bg-transparent hover:bg-navy-800/60 text-slate-200 hover:text-white border border-slate-500 hover:border-cyan',
+    ghost: 'bg-transparent hover:bg-navy-800/40 text-slate-300 hover:text-cyan',
+    accent: 'bg-accent hover:bg-accent/90 text-white shadow-lg shadow-accent/20 border border-accent',
     whatsapp: 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/30 border border-emerald-500',
-    white: 'bg-white text-navy-950 hover:bg-slate-100 shadow-lg font-bold border border-white'
+    white: 'bg-custom-white text-navy-950 hover:bg-slate-100 shadow-lg font-bold border border-white'
   };
 
   const sizes = {

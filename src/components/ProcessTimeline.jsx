@@ -53,31 +53,31 @@ export default function ProcessTimeline() {
         {steps.map((step, idx) => (
           <div
             key={idx}
-            className="group relative bg-navy-900/90 rounded-xl p-6 border border-navy-800 hover:border-brand-orange/60 transition-all duration-300 shadow-md hover:shadow-navy-lg flex flex-col justify-between"
+            className="group relative bg-white rounded-xl p-6 border border-custom-light hover:border-cyan/60 transition-all duration-300 shadow-md hover:shadow-xl flex flex-col justify-between"
           >
             <div>
               {/* Step number badge */}
               <div className="flex items-center justify-between mb-4">
-                <span className="font-mono font-extrabold text-2xl text-brand-orange group-hover:scale-110 transition-transform">
+                <span className="font-mono font-extrabold text-2xl text-primary group-hover:scale-110 transition-transform">
                   {step.num}
                 </span>
-                <span className="w-8 h-8 rounded-full bg-navy-800 text-slate-400 group-hover:bg-brand-orange group-hover:text-white flex items-center justify-center text-xs font-bold transition-colors">
+                <span className="w-8 h-8 rounded-full bg-custom-light text-primary group-hover:bg-cyan group-hover:text-white flex items-center justify-center text-xs font-bold transition-colors">
                   {idx + 1}
                 </span>
               </div>
 
-              <h3 className="text-lg font-bold text-white font-heading group-hover:text-brand-orange transition-colors">
+              <h3 className="text-lg font-bold text-primary font-heading group-hover:text-cyan transition-colors">
                 {step.title}
               </h3>
 
-              <p className="mt-2 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              <p className="mt-2 text-custom-darkText text-xs sm:text-sm leading-relaxed">
                 {step.desc}
               </p>
             </div>
 
-            <div className="mt-6 pt-3 border-t border-navy-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
+            <div className="mt-6 pt-3 border-t border-custom-light flex items-center justify-between text-[11px] font-mono text-custom-darkText/70">
               <span>Phase {idx < 4 ? 'Phase A' : 'Phase B'}</span>
-              <span className="text-brand-orange font-bold">HORLARLEKX Quality</span>
+              <span className="text-cyan font-bold">HORLARLEKX Quality</span>
             </div>
           </div>
         ))}

@@ -20,19 +20,19 @@ export default function FAQAccordion({ faqs, showSearch = false, className = '' 
     <div className={`space-y-4 ${className}`}>
       {showSearch && (
         <div className="relative mb-6">
-          <Search className="w-5 h-5 absolute left-4 top-3.5 text-slate-400" />
+          <Search className="w-5 h-5 absolute left-4 top-3.5 text-custom-darkText/50" />
           <input
             type="text"
             placeholder="Search questions (e.g. ACP, quotation, locations)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 bg-navy-900 border border-navy-700 rounded-xl text-slate-100 placeholder-slate-400 focus:outline-none focus:border-brand-orange text-sm shadow-inner"
+            className="w-full pl-12 pr-4 py-3 bg-white border border-custom-light rounded-xl text-custom-darkText placeholder-custom-darkText/50 focus:outline-none focus:border-cyan text-sm shadow-sm"
           />
         </div>
       )}
 
       {filteredFaqs.length === 0 ? (
-        <div className="p-8 text-center bg-navy-900 rounded-xl border border-navy-800 text-slate-400 text-sm">
+        <div className="p-8 text-center bg-white rounded-xl border border-custom-light text-custom-darkText/70 text-sm">
           No questions found matching "{searchQuery}".
         </div>
       ) : (
@@ -43,8 +43,8 @@ export default function FAQAccordion({ faqs, showSearch = false, className = '' 
               key={faq.id}
               className={`rounded-xl border transition-all duration-300 overflow-hidden ${
                 isOpen
-                  ? 'bg-navy-900 border-brand-orange/60 shadow-lg'
-                  : 'bg-navy-900/60 hover:bg-navy-900 border-navy-800'
+                  ? 'bg-white border-cyan/60 shadow-md'
+                  : 'bg-white hover:bg-custom-light/30 border-custom-light'
               }`}
             >
               <button
@@ -55,11 +55,11 @@ export default function FAQAccordion({ faqs, showSearch = false, className = '' 
               >
                 <div className="flex items-center space-x-3">
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                    isOpen ? 'bg-brand-orange text-white' : 'bg-navy-800 text-brand-orange'
+                    isOpen ? 'bg-cyan text-white' : 'bg-custom-light text-cyan'
                   }`}>
                     <HelpCircle className="w-4 h-4" />
                   </div>
-                  <h3 className="font-bold text-base text-white font-heading">
+                  <h3 className="font-bold text-base text-primary font-heading">
                     {faq.question}
                   </h3>
                 </div>
@@ -67,19 +67,19 @@ export default function FAQAccordion({ faqs, showSearch = false, className = '' 
                 <div className="flex items-center space-x-2 shrink-0">
                   {faq.category && (
                     <div className="hidden sm:block">
-                      <Badge variant="navy" size="sm">{faq.category}</Badge>
+                      <Badge variant="cyan" size="sm">{faq.category}</Badge>
                     </div>
                   )}
                   <ChevronDown
-                    className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${
-                      isOpen ? 'transform rotate-180 text-brand-orange' : ''
+                    className={`w-5 h-5 text-custom-darkText/50 transition-transform duration-300 ${
+                      isOpen ? 'transform rotate-180 text-cyan' : ''
                     }`}
                   />
                 </div>
               </button>
 
               {isOpen && (
-                <div className="px-5 pb-5 pt-1 text-slate-300 text-sm leading-relaxed border-t border-navy-800/60 bg-navy-950/40">
+                <div className="px-5 pb-5 pt-1 text-custom-darkText text-sm leading-relaxed border-t border-custom-light bg-custom-light/20">
                   {faq.answer}
                 </div>
               )}

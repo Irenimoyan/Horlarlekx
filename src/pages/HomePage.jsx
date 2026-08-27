@@ -34,13 +34,13 @@ export default function HomePage() {
     <div className="space-y-0">
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 overflow-hidden bg-navy-950 w-full max-w-full">
-        {/* Background Image with Cinematic Overlay */}
-        <div className="absolute inset-0 z-0 overflow-hidden w-full max-w-full">
+      <section className="relative min-h-screen flex items-center justify-center pt-28 pb-20 bg-navy-950 overflow-hidden w-full max-w-full">
+        {/* Background Image with Cinematic Overlay spanning full container */}
+        <div className="absolute inset-0 z-0 overflow-hidden w-full h-full max-w-full">
           <img
-            src="/projects/Opic complex at Sheraton  ikeja lagos/20250404_130155.webp"
+            src="/hero-bg.webp"
             alt="HORLARLEKX Exterior Cladding & Construction Project"
-            className="w-full h-full object-cover object-center transform scale-105 filter brightness-90 max-w-full"
+            className="w-full h-full object-cover object-center filter brightness-95 max-w-full"
             fetchpriority="high"
             decoding="async"
           />
@@ -53,9 +53,9 @@ export default function HomePage() {
           <div className="max-w-3xl space-y-6">
             
             {/* Top Tagline Badge */}
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-navy-900/90 border border-brand-orange/40 text-xs font-bold text-slate-200 shadow-xl backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-brand-orange animate-ping" />
-              <span className="text-brand-orange uppercase font-mono tracking-widest">{companyInfo.tagline}</span>
+            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-navy-900/90 border border-accent/40 text-xs font-bold text-slate-200 shadow-xl backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
+              <span className="text-accent uppercase font-mono tracking-widest">{companyInfo.tagline}</span>
               <span className="text-slate-400">•</span>
               <span className="truncate">{companyInfo.brandName}</span>
             </div>
@@ -111,7 +111,7 @@ export default function HomePage() {
       <TrustStrip />
 
       {/* 3. INTRODUCTION SECTION */}
-      <section className="py-20 bg-navy-900 relative">
+      <section className="py-20 section-double-bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -144,19 +144,19 @@ export default function HomePage() {
 
             {/* Right: Copy & Positioning */}
             <div className="lg:col-span-6 space-y-6">
-              <Badge variant="orange">Company Overview</Badge>
+              <Badge variant="cyan">Company Overview</Badge>
 
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-heading tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-primary font-heading tracking-tight leading-tight">
                 Building Beyond Expectations
               </h2>
 
-              <div className="h-1 w-20 bg-brand-orange rounded-full" />
+              <div className="h-1 w-20 bg-cyan rounded-full" />
 
-              <p className="text-slate-300 text-base leading-relaxed">
+              <p className="text-custom-darkText text-base leading-relaxed">
                 HORLARLEKX Exterior Services provides comprehensive construction, exterior finishing, architectural facade, signage, fabrication, and general contracting solutions for commercial, residential, and corporate developments.
               </p>
 
-              <p className="text-slate-300 text-base leading-relaxed">
+              <p className="text-custom-darkText text-base leading-relaxed">
                 Positioned as more than an exterior cladding contractor, we combine multi-disciplinary engineering expertise with premium materials to deliver buildings that stand out for their aesthetic sophistication, structural integrity, and long-term weather endurance.
               </p>
 
@@ -168,11 +168,11 @@ export default function HomePage() {
                   { title: "Creative Design", desc: "Photorealistic 3D architectural mockups" },
                   { title: "Professional Execution", desc: "On-time delivery & safety compliance" },
                 ].map((pillar, idx) => (
-                  <div key={idx} className="p-3.5 rounded-lg bg-navy-950 border border-navy-800 flex items-start space-x-3">
-                    <CheckCircle2 className="w-5 h-5 text-brand-orange shrink-0 mt-0.5" />
+                  <div key={idx} className="p-3.5 rounded-lg bg-white border border-custom-light flex items-start space-x-3 shadow-sm">
+                    <CheckCircle2 className="w-5 h-5 text-cyan shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-white font-bold text-xs font-heading">{pillar.title}</h4>
-                      <p className="text-slate-400 text-[11px] mt-0.5">{pillar.desc}</p>
+                      <h4 className="text-primary font-bold text-xs font-heading">{pillar.title}</h4>
+                      <p className="text-custom-darkText/80 text-[11px] mt-0.5">{pillar.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -189,13 +189,14 @@ export default function HomePage() {
       </section>
 
       {/* 4. SERVICES SECTION */}
-      <section className="py-20 bg-navy-950 relative">
+      <section className="py-20 section-double-bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badgeText="Comprehensive Solutions"
             title="Our Core Services"
             subtitle="Comprehensive building, finishing and architectural solutions tailored to every project requirement."
             centered
+            lightMode={true}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -205,7 +206,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button to="/services" variant="outline" size="lg" icon={ArrowRight} iconPosition="right">
+            <Button to="/services" variant="primary" size="lg" icon={ArrowRight} iconPosition="right">
               View All 18+ Service Categories
             </Button>
           </div>
@@ -213,12 +214,13 @@ export default function HomePage() {
       </section>
 
       {/* 5. FEATURED PROJECTS SHOWCASE */}
-      <section className="py-20 bg-navy-900 relative">
+      <section className="py-20 section-double-bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badgeText="Architectural Portfolio"
             title="Our Recent Work"
             subtitle="Explore some of the projects where we have transformed ideas into professionally finished spaces."
+            lightMode={true}
           />
 
           {/* Project Category Filter Tabs */}
@@ -229,8 +231,8 @@ export default function HomePage() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-lg text-xs font-bold whitespace-nowrap transition-all duration-200 ${
                   selectedCategory === category
-                    ? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/20 scale-105'
-                    : 'bg-navy-950 text-slate-400 hover:text-white hover:bg-navy-800 border border-navy-800'
+                    ? 'bg-cyan text-white shadow-md scale-105'
+                    : 'bg-white text-custom-darkText hover:bg-custom-light border border-custom-light'
                 }`}
               >
                 {category}
@@ -258,7 +260,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. WHY CHOOSE HORLARLEKX */}
-      <section className="py-20 bg-navy-950 relative overflow-hidden">
+      <section className="py-20 section-double-bg-blue relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <SectionHeader
             badgeText="Why Us"
@@ -331,27 +333,28 @@ export default function HomePage() {
       </section>
 
       {/* 7. PROCESS SECTION */}
-      <section className="py-20 bg-navy-900 relative">
+      <section className="py-20 section-double-bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badgeText="How We Work"
             title="Our Architectural Project Workflow"
             subtitle="An 8-step structured engineering process ensuring precision execution from initial consultation to final completion."
             centered
+            lightMode={true}
           />
           <ProcessTimeline />
         </div>
       </section>
 
       {/* 8. COMPANY STATISTICS (Clear Placeholders as requested) */}
-      <section className="py-16 bg-navy-950 border-y border-navy-800">
+      <section className="py-16 section-double-bg-white relative border-y border-custom-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <Badge variant="placeholder" size="sm">Company Track Record</Badge>
-            <h3 className="text-xl font-bold text-white font-heading mt-2">
+            <h3 className="text-xl font-bold text-primary font-heading mt-2">
               Performance & Capacity Overview
             </h3>
-            <p className="text-xs text-slate-400 max-w-lg mx-auto mt-1">
+            <p className="text-xs text-custom-darkText/80 max-w-lg mx-auto mt-1">
               Official figures will be updated upon final verification. Structure prepared for seamless client input.
             </p>
           </div>
@@ -365,35 +368,36 @@ export default function HomePage() {
       </section>
 
       {/* 9. TESTIMONIALS SECTION (Genuine Placeholders) */}
-      <section className="py-20 bg-navy-900 relative">
+      <section className="py-20 section-double-bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badgeText="Client Reviews"
             title="What Clients Say"
             subtitle="Genuine feedback from property owners, real estate developers, and corporate clients."
             centered
+            lightMode={true}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonialsData.map((test) => (
               <div
                 key={test.id}
-                className="bg-navy-950 p-6 rounded-xl border border-navy-800 relative flex flex-col justify-between"
+                className="bg-white p-6 rounded-xl border border-custom-light relative flex flex-col justify-between shadow-md"
               >
                 <div className="mb-4">
                   <Badge variant="placeholder" size="sm">Placeholder Review</Badge>
                 </div>
 
-                <p className="text-slate-300 text-sm italic leading-relaxed mb-6">
+                <p className="text-custom-darkText text-sm italic leading-relaxed mb-6">
                   "{test.testimonial}"
                 </p>
 
-                <div className="pt-4 border-t border-navy-800 flex items-center justify-between text-xs">
+                <div className="pt-4 border-t border-custom-light flex items-center justify-between text-xs">
                   <div>
-                    <h4 className="text-white font-bold">{test.clientName}</h4>
-                    <p className="text-slate-400">{test.company} • {test.position}</p>
+                    <h4 className="text-primary font-bold">{test.clientName}</h4>
+                    <p className="text-custom-darkText/70">{test.company} • {test.position}</p>
                   </div>
-                  <span className="text-[11px] font-mono text-brand-orange">{test.location}</span>
+                  <span className="text-[11px] font-mono text-cyan">{test.location}</span>
                 </div>
               </div>
             ))}
@@ -402,17 +406,18 @@ export default function HomePage() {
       </section>
 
       {/* 10. FAQ SECTION PREVIEW */}
-      <section className="py-20 bg-navy-950">
+      <section className="py-20 section-double-bg-white relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             badgeText="Got Questions?"
             title="Frequently Asked Questions"
             subtitle="Find quick answers to common questions about our cladding, signage, and construction services."
             centered
+            lightMode={true}
           />
           <FAQAccordion faqs={faqData.slice(0, 5)} />
           <div className="mt-8 text-center">
-            <Link to="/faq" className="text-xs font-bold text-brand-orange hover:text-white uppercase tracking-wider transition-colors">
+            <Link to="/faq" className="text-xs font-bold text-cyan hover:text-secondary uppercase tracking-wider transition-colors">
               View All Frequently Asked Questions →
             </Link>
           </div>
@@ -420,11 +425,11 @@ export default function HomePage() {
       </section>
 
       {/* 11. CONVERSION CTA BLOCK */}
-      <section className="py-16 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 border-t border-brand-orange/30 relative">
+      <section className="py-16 section-double-bg-blue relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-navy-900/90 rounded-2xl p-8 sm:p-12 border border-brand-orange/40 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-3 text-center lg:text-left max-w-2xl">
-              <Badge variant="orange">Ready to Transform Your Building?</Badge>
+              <Badge variant="accent">Ready to Transform Your Building?</Badge>
               <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-heading">
                 Let's Discuss Your Project Requirements
               </h2>

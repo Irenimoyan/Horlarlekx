@@ -7,21 +7,36 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: {
+          DEFAULT: '#004880',
+          dark: '#003F73',
+        },
+        secondary: '#00687C',
+        cyan: {
+          DEFAULT: '#00A8BC',
+          hover: '#00687C',
+        },
+        accent: '#AE057B',
+        custom: {
+          white: '#FCFCFC',
+          light: '#E2EBEE',
+          darkText: '#324250',
+        },
         navy: {
-          950: '#070C1E',
-          900: '#0B132B',
-          850: '#0F1A3A',
-          800: '#142247',
-          700: '#1E293B',
-          600: '#334155',
-          500: '#475569',
+          950: '#003F73',
+          900: '#004880',
+          850: '#004880',
+          800: '#003F73',
+          700: '#00687C',
+          600: '#00687C',
+          500: '#324250',
         },
         brand: {
-          orange: '#EA580C',
-          'orange-hover': '#C2410C',
-          'orange-bright': '#FF6B00',
-          'orange-light': '#FFF7ED',
-          'orange-subtle': '#FFEDD5',
+          orange: '#00A8BC',
+          'orange-hover': '#00687C',
+          'orange-bright': '#AE057B',
+          'orange-light': '#E2EBEE',
+          'orange-subtle': '#E2EBEE',
         },
       },
       fontFamily: {
@@ -29,11 +44,11 @@ export default {
         heading: ['"Plus Jakarta Sans"', 'sans-serif'],
       },
       boxShadow: {
-        'navy-lg': '0 20px 25px -5px rgba(11, 19, 43, 0.5), 0 8px 10px -6px rgba(11, 19, 43, 0.3)',
-        'orange-glow': '0 10px 25px -5px rgba(234, 88, 12, 0.4), 0 8px 10px -6px rgba(234, 88, 12, 0.2)',
+        'navy-lg': '0 20px 25px -5px rgba(0, 63, 115, 0.5), 0 8px 10px -6px rgba(0, 63, 115, 0.3)',
+        'orange-glow': '0 10px 25px -5px rgba(0, 168, 188, 0.4), 0 8px 10px -6px rgba(0, 168, 188, 0.2)',
       },
       backgroundImage: {
-        'grid-pattern': "radial-gradient(circle, rgba(234,88,12,0.1) 1px, transparent 1px)",
+        'grid-pattern': "radial-gradient(circle, rgba(0,168,188,0.1) 1px, transparent 1px)",
       }
     },
   },

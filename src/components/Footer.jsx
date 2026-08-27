@@ -79,7 +79,7 @@ export default function Footer() {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-slate-400 hover:text-brand-orange transition-colors flex items-center space-x-1.5"
+                    className="text-slate-400 hover:text-accent transition-colors flex items-center space-x-1.5"
                   >
                     <ArrowRight className="w-3 h-3 text-brand-orange opacity-70" />
                     <span>{link.name}</span>
@@ -108,7 +108,7 @@ export default function Footer() {
                 <li key={idx}>
                   <Link
                     to={service.path}
-                    className="text-slate-400 hover:text-brand-orange transition-colors flex items-center space-x-1.5"
+                    className="text-slate-400 hover:text-accent transition-colors flex items-center space-x-1.5"
                   >
                     <ArrowRight className="w-3 h-3 text-brand-orange opacity-70" />
                     <span>{service.name}</span>

@@ -34,22 +34,22 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-28 pb-20 bg-navy-950 text-slate-100">
+    <div className="pt-28 pb-20 section-double-bg-white text-custom-darkText">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumbs items={[{ label: 'Contact Us' }]} />
 
-        <div className="py-8 border-b border-navy-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div className="py-8 border-b border-custom-light flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="space-y-3">
-            <Badge variant="orange">Direct Communication</Badge>
-            <h1 className="text-3xl sm:text-5xl font-black text-white font-heading tracking-tight">
+            <Badge variant="cyan">Direct Communication</Badge>
+            <h1 className="text-3xl sm:text-5xl font-black text-primary font-heading tracking-tight">
               Contact HORLARS SERVICES
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
+            <p className="text-base sm:text-lg text-custom-darkText max-w-3xl leading-relaxed">
               Get in touch with our team for project inquiries, site assessments, and architectural finishing consultations in Lagos and Ogun State.
             </p>
           </div>
-          <div className="shrink-0 bg-white p-2.5 rounded-2xl shadow-2xl border border-brand-orange/40">
+          <div className="shrink-0 bg-white p-2.5 rounded-2xl shadow-xl border border-cyan/40">
             <img
               src="/logo.jpg"
               alt="HORLARS SERVICES Logo"
@@ -62,20 +62,20 @@ export default function ContactPage() {
         <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           {/* Lagos Office Card */}
-          <div className="bg-navy-900 rounded-2xl p-6 border border-navy-800 space-y-4 shadow-lg hover:border-brand-orange/50 transition-colors">
-            <div className="flex items-center space-x-2 text-brand-orange">
+          <div className="bg-white rounded-2xl p-6 border border-custom-light space-y-4 shadow-md hover:border-cyan/50 transition-colors">
+            <div className="flex items-center space-x-2 text-cyan">
               <MapPin className="w-5 h-5 shrink-0" />
               <span className="font-mono text-xs uppercase font-bold">Lagos State Office</span>
             </div>
-            <h3 className="text-xl font-bold text-white font-heading">
+            <h3 className="text-xl font-bold text-primary font-heading">
               {companyInfo.offices[0].name}
             </h3>
-            <p className="text-slate-300 text-sm leading-relaxed">
+            <p className="text-custom-darkText text-sm leading-relaxed">
               {companyInfo.offices[0].address}
             </p>
             <div className="pt-2">
-              <span className="text-[11px] font-mono text-slate-400 block mb-1">Interactive Map Link:</span>
-              <span className="text-xs text-amber-400 font-mono italic">To be provided</span>
+              <span className="text-[11px] font-mono text-custom-darkText/60 block mb-1">Interactive Map Link:</span>
+              <span className="text-xs text-secondary font-mono italic">To be provided</span>
             </div>
           </div>
 

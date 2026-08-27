@@ -25,7 +25,7 @@ export default function ServiceDetailPage() {
     .slice(0, 3);
 
   return (
-    <div className="pt-28 pb-20 bg-navy-950 text-slate-100">
+    <div className="pt-28 pb-20 section-double-bg-white text-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumbs

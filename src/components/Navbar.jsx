@@ -50,20 +50,20 @@ export default function Navbar() {
           <div className="flex items-center space-x-6">
             <a 
               href={`tel:${companyInfo.contacts.phone}`} 
-              className="flex items-center space-x-1.5 hover:text-brand-orange transition-colors"
+              className="flex items-center space-x-1.5 hover:text-cyan transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-brand-orange" />
+              <Phone className="w-3.5 h-3.5 text-cyan" />
               <span>{companyInfo.contacts.phoneFormatted}</span>
             </a>
             <a 
               href={`mailto:${companyInfo.contacts.email}`} 
-              className="flex items-center space-x-1.5 hover:text-brand-orange transition-colors"
+              className="flex items-center space-x-1.5 hover:text-cyan transition-colors"
             >
-              <Mail className="w-3.5 h-3.5 text-brand-orange" />
+              <Mail className="w-3.5 h-3.5 text-cyan" />
               <span>{companyInfo.contacts.email}</span>
             </a>
             <div className="flex items-center space-x-1.5 text-slate-400">
-              <MapPin className="w-3.5 h-3.5 text-brand-orange" />
+              <MapPin className="w-3.5 h-3.5 text-cyan" />
               <span>Lagos & Ogun State, Nigeria</span>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function Navbar() {
               href={companyInfo.socials.tiktok.url} 
               target="_blank" 
               rel="noreferrer"
-              className="hover:text-brand-orange font-medium transition-colors"
+              className="hover:text-cyan font-medium transition-colors"
             >
               TikTok: @{companyInfo.socials.tiktok.handle}
             </a>
@@ -91,7 +91,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo Branding */}
           <Link to="/" className="flex items-center space-x-3 group min-w-0">
-            <div className="bg-white p-1 rounded-xl shadow-lg border border-brand-orange/40 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center shrink-0">
+            <div className="bg-white p-1 rounded-xl shadow-lg border border-cyan/40 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center shrink-0">
               <img
                 src="/logo.jpg"
                 alt="HORLARS SERVICES Logo"
@@ -100,10 +100,10 @@ export default function Navbar() {
             </div>
 
             <div className="flex flex-col min-w-0">
-              <span className="font-extrabold text-base sm:text-lg md:text-xl text-white tracking-tight leading-tight group-hover:text-brand-orange transition-colors truncate">
+              <span className="font-extrabold text-base sm:text-lg md:text-xl text-white tracking-tight leading-tight group-hover:text-cyan transition-colors truncate">
                 HORLARS SERVICES
               </span>
-              <span className="text-[10px] md:text-[11px] font-semibold text-brand-orange tracking-wider uppercase truncate">
+              <span className="text-[10px] md:text-[11px] font-semibold text-cyan tracking-wider uppercase truncate">
                 {companyInfo.tagline}
               </span>
             </div>
@@ -115,10 +115,10 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3.5 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                className={`px-3.5 py-2 rounded-md text-sm font-semibold transition-all duration-200 ${
                   isActive(link.path)
-                    ? 'text-white bg-navy-800 border-b-2 border-brand-orange font-bold shadow-sm'
-                    : 'text-slate-300 hover:text-white hover:bg-navy-800/50'
+                    ? 'text-white bg-navy-800 border-b-2 border-cyan font-bold shadow-sm'
+                    : 'text-slate-200 hover:text-white hover:bg-navy-800/60'
                 }`}
               >
                 {link.name}
@@ -137,18 +137,18 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-navy-800 focus:outline-none focus:ring-2 focus:ring-brand-orange"
+            className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-navy-800 focus:outline-none focus:ring-2 focus:ring-cyan"
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-brand-orange" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 text-cyan" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[60px] bg-navy-950/98 backdrop-blur-xl border-b border-navy-800 p-6 shadow-2xl transition-all duration-300 max-h-[calc(100vh-60px)] overflow-y-auto w-full max-w-full">
+        <div className="lg:hidden fixed inset-x-0 top-[60px] bg-navy-950/98 backdrop-blur-xl border-b border-navy-800 p-6 shadow-2xl transition-all duration-300 max-h-[calc(100vh-60px)] overflow-y-auto w-full max-w-full text-slate-100">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <Link
@@ -156,7 +156,7 @@ export default function Navbar() {
                 to={link.path}
                 className={`flex items-center justify-between px-4 py-3 rounded-lg text-base font-semibold transition-colors ${
                   isActive(link.path)
-                    ? 'bg-brand-orange text-white'
+                    ? 'bg-cyan text-white'
                     : 'text-slate-200 hover:bg-navy-800 hover:text-white'
                 }`}
               >
@@ -172,14 +172,14 @@ export default function Navbar() {
               
               <div className="p-4 rounded-lg bg-navy-900 border border-navy-800 text-xs text-slate-300 space-y-2">
                 <div className="flex items-center space-x-2 text-slate-300">
-                  <Phone className="w-4 h-4 text-brand-orange" />
-                  <a href={`tel:${companyInfo.contacts.phone}`} className="hover:text-brand-orange">
+                  <Phone className="w-4 h-4 text-cyan" />
+                  <a href={`tel:${companyInfo.contacts.phone}`} className="hover:text-cyan">
                     {companyInfo.contacts.phoneFormatted}
                   </a>
                 </div>
                 <div className="flex items-center space-x-2 text-slate-300">
-                  <Mail className="w-4 h-4 text-brand-orange" />
-                  <a href={`mailto:${companyInfo.contacts.email}`} className="hover:text-brand-orange truncate">
+                  <Mail className="w-4 h-4 text-cyan" />
+                  <a href={`mailto:${companyInfo.contacts.email}`} className="hover:text-cyan truncate">
                     {companyInfo.contacts.email}
                   </a>
                 </div>

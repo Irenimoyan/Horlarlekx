@@ -142,25 +142,25 @@ export default function RequestQuotePage() {
   ];
 
   return (
-    <div className="pt-28 pb-20 bg-navy-950 text-slate-100">
+    <div className="pt-28 pb-20 section-double-bg-white text-custom-darkText">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <Breadcrumbs items={[{ label: 'Request a Quote' }]} />
 
         {/* Page Header */}
-        <div className="py-6 border-b border-navy-800 text-center flex flex-col items-center">
-          <div className="mb-4 bg-white p-2 rounded-xl shadow-xl border border-brand-orange/40">
+        <div className="py-6 border-b border-custom-light text-center flex flex-col items-center">
+          <div className="mb-4 bg-white p-2 rounded-xl shadow-xl border border-cyan/40">
             <img
               src="/logo.jpg"
               alt="HORLARS SERVICES Logo"
               className="h-14 sm:h-16 w-auto object-contain rounded-lg"
             />
           </div>
-          <Badge variant="orange">High-Converting Quote Engine</Badge>
-          <h1 className="text-3xl sm:text-5xl font-black text-white font-heading tracking-tight mt-3">
+          <Badge variant="accent">High-Converting Quote Engine</Badge>
+          <h1 className="text-3xl sm:text-5xl font-black text-primary font-heading tracking-tight mt-3">
             Tell Us About Your Project
           </h1>
-          <p className="mt-3 text-base text-slate-300 max-w-xl mx-auto">
+          <p className="mt-3 text-base text-custom-darkText max-w-xl mx-auto">
             Share your project details and our technical team will review your requirements and prepare an itemized quotation.
           </p>
         </div>
@@ -175,10 +175,10 @@ export default function RequestQuotePage() {
                   onClick={() => setCurrentStep(st.num)}
                   className={`py-3 px-2 rounded-xl text-xs font-bold transition-all border ${
                     currentStep === st.num
-                      ? 'bg-brand-orange text-white border-brand-orange shadow-lg shadow-brand-orange/30'
+                      ? 'bg-cyan text-white border-cyan shadow-md'
                       : currentStep > st.num
-                      ? 'bg-navy-900 text-emerald-400 border-emerald-500/40'
-                      : 'bg-navy-900/60 text-slate-400 border-navy-800'
+                      ? 'bg-white text-emerald-600 border-emerald-500/40'
+                      : 'bg-white text-custom-darkText/60 border-custom-light'
                   }`}
                 >
                   <div className="flex items-center justify-center space-x-1">

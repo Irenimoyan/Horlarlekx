@@ -118,7 +118,7 @@ export default function Navbar() {
                 className={`px-3.5 py-2 rounded-md text-sm font-semibold transition-all duration-200 ${
                   isActive(link.path)
                     ? 'text-white bg-navy-800 border-b-2 border-cyan font-bold shadow-sm'
-                    : 'text-slate-200 hover:text-white hover:bg-navy-800/60'
+                    : 'text-cyan hover:text-white hover:bg-navy-800/60'
                 }`}
               >
                 {link.name}
@@ -157,7 +157,7 @@ export default function Navbar() {
                 className={`flex items-center justify-between px-4 py-3 rounded-lg text-base font-semibold transition-colors ${
                   isActive(link.path)
                     ? 'bg-cyan text-white'
-                    : 'text-slate-200 hover:bg-navy-800 hover:text-white'
+                    : 'text-cyan hover:bg-navy-800 hover:text-white'
                 }`}
               >
                 <span>{link.name}</span>

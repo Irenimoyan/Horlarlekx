@@ -60,8 +60,11 @@ export const projectsData = [
     solution: "Deployed certified cladding fabricators using precision measuring equipment and heavy-duty aluminium sub-frame anchorage systems, delivering a pristine weather-tight exterior finish in 7 days.",
     servicesProvided: ["ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "On-Site Fabrication", "3D Architectural Fitting"],
     images: [
+      "/projects/abraham-adesanya/20260620_123054-800.webp",
       "/projects/abraham-adesanya/img-1.jpg",
-      "/projects/abraham-adesanya/img-2.jpg"
+      "/projects/abraham-adesanya/img-2.jpg",
+      "/projects/abraham-adesanya/20260620_123054.jpg",
+      "/projects/abraham-adesanya/IMG-20260616-WA0002.jpg"
     ],
     videos: [
       "/projects/abraham-adesanya/VID-20260620-WA0034.mp4",
@@ -84,21 +87,31 @@ export const projectsData = [
     servicesProvided: ["ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "Aluminium Works", "Structural Framing"],
     duration: "5 Weeks",
     images: [
+      "/projects/Nnewi glass and cladding/IMG-20260805-WA0153.jpg",
       "/projects/nnewi/IMG-20260422-WA0064.jpeg",
       "/projects/nnewi/20260427_075706.jpg",
       "/projects/nnewi/20251222_175101.jpg",
       "/projects/nnewi/20251222_175104.jpg",
+      "/projects/nnewi/IMG-20251023-WA0037.jpg",
       "/projects/Nnewi glass and cladding/20251112_171212.jpg",
       "/projects/Nnewi glass and cladding/20251113_160520.jpg",
+      "/projects/Nnewi glass and cladding/20251122_155647.jpg",
       "/projects/Nnewi glass and cladding/20251216_160335.jpg",
+      "/projects/Nnewi glass and cladding/20251216_170211.jpg",
       "/projects/Nnewi glass and cladding/20251218_180549.jpg",
-      "/projects/Nnewi glass and cladding/20251219_203623.jpg"
+      "/projects/Nnewi glass and cladding/20251218_182358.jpg",
+      "/projects/Nnewi glass and cladding/20251219_203623.jpg",
+      "/projects/Nnewi glass and cladding/20251225_055313.jpg",
+      "/projects/Nnewi glass and cladding/IMG-20260805-WA0145.jpg",
+      
     ],
     videos: [
       "/projects/Nnewi glass and cladding/VID-20260806-WA0010.mp4",
       "/projects/Nnewi glass and cladding/VID-20260806-WA0011.mp4",
       "/projects/Nnewi glass and cladding/20251122_155837.mp4",
       "/projects/Nnewi glass and cladding/20251216_170242.mp4",
+      "/projects/Nnewi glass and cladding/20251224_184617.mp4",
+      "/projects/Nnewi glass and cladding/20251224_184736.mp4",
       "/projects/Nnewi glass and cladding/VID-20260806-WA0012.mp4",
       "/projects/Nnewi glass and cladding/VID-20260806-WA0013.mp4"
     ]
@@ -283,12 +296,14 @@ export const projectsData = [
       "/projects/Egbeda akowojo/20250704_191505.jpg",
       "/projects/Egbeda akowojo/20250704_184618.jpg",
       "/projects/Egbeda akowojo/IMG-20250630-WA0010.jpg",
-      "/projects/Egbeda akowojo/IMG-20250630-WA0011.jpg"
+      "/projects/Egbeda akowojo/IMG-20250630-WA0011.jpg",
+      "/projects/Egbeda akowojo/IMG-20250630-WA0026.jpg"
     ],
     videos: [
       "/projects/Egbeda akowojo/20250704_191508.mp4",
       "/projects/Egbeda akowojo/Snapchat-628041406.mp4",
-      "/projects/Egbeda akowojo/20250703_080212.mp4"
+      "/projects/Egbeda akowojo/20250703_080212.mp4",
+      "/projects/Egbeda akowojo/20250703_080212 (1).mp4"
     ]
   },
   {
@@ -308,9 +323,15 @@ export const projectsData = [
     duration: "3 Weeks",
     images: [
       "/projects/Cotton wall glass/IMG-20260805-WA0108.jpg",
-      // "/projects/Cotton wall glass/IMG-20260805-WA0118.jpg",
-      // "/projects/Cotton wall glass/IMG-20260805-WA0119.jpg",
-      // "/projects/Cotton wall glass/IMG-20260805-WA0120.jpg"
+      "/projects/Cotton wall glass/IMG-20260805-WA0118.jpg",
+      "/projects/Cotton wall glass/IMG-20260805-WA0119.jpg",
+      "/projects/Cotton wall glass/IMG-20260805-WA0120.jpg",
+      "/projects/Cotton wall glass/IMG-20260805-WA0121.jpg",
+      "/projects/Cotton wall glass/IMG-20260806-WA0020.jpg",
+      "/projects/Cotton wall glass/IMG-20260806-WA0033.jpg",
+      "/projects/Cotton wall glass/IMG-20260806-WA0034.jpg",
+      "/projects/Cotton wall glass/IMG-20260806-WA0040.jpg",
+      "/projects/Cotton wall glass/IMG-20260806-WA0047.jpg"
     ],
     videos: [
       "/projects/Cotton wall glass/VID-20260805-WA0063.mp4"
@@ -335,7 +356,8 @@ export const projectsData = [
       "/projects/CAC church  ijaye/20250722_141605.jpg",
       "/projects/CAC church  ijaye/20250722_141558.jpg",
       "/projects/CAC church  ijaye/20250715_173956.jpg",
-      "/projects/CAC church  ijaye/20250715_174008.jpg"
+      "/projects/CAC church  ijaye/20250715_174008.jpg",
+      "/projects/CAC church  ijaye/20250715_173953.jpg"
     ],
     videos: [
       "/projects/CAC church  ijaye/20250715_174011.mp4",
@@ -361,11 +383,382 @@ export const projectsData = [
       "/projects/AKOKA/IMG-20260821-WA0061.jpg",
       "/projects/AKOKA/IMG-20260821-WA0092.jpg",
       "/projects/AKOKA/IMG-20260821-WA0085.jpg",
-      "/projects/AKOKA/IMG-20260821-WA0062.jpg"
+      "/projects/AKOKA/IMG-20260821-WA0062.jpg",
+      "/projects/AKOKA/IMG-20260821-WA0047.jpg",
+      "/projects/AKOKA/IMG-20260821-WA0050.jpg",
+      "/projects/AKOKA/IMG-20260821-WA0053.jpg"
     ],
     videos: [
-      "/projects/AKOKA/VID-20260821-WA0068.mp4",
-      "/projects/AKOKA/VID-20260821-WA0103.mp4"
+      "/projects/AKOKA/VID-20260821-WA0068.mp4"
+    ]
+  },
+  {
+    id: "proj-3d-agbe-road",
+    title: "Agbe Road 3D Architectural Design & Facade Project",
+    slug: "agbe-road-abule-egba-3d-architectural-design-facade",
+    location: "Agbe Road, Abule Egba, Lagos State",
+    year: "2024",
+    category: "3D Designs",
+    projectType: "3D Architectural Modeling & Facade Cladding",
+    client: "Commercial & Residential Client",
+    projectDates: "October 2024",
+    delivery: "Completed on Schedule",
+    duration: "2 Weeks",
+    shortDescription: "3D architectural facade visualization, precision panel layout planning, and composite cladding installation in Abule Egba.",
+    overview: "Turnkey 3D architectural design and exterior elevation project along Agbe Road, Abule Egba. HORLARLEKX provided end-to-end 3D CAD modeling, material specification, and structural facade cladding fitting.",
+    challenge: "Translating complex 3D visual concepts into real-world structural framing and weather-tight ACP composite panel fittings.",
+    solution: "Utilized 3D rendering software for structural calculations and deployed custom aluminium grid substructures to achieve exact dimensional alignment.",
+    servicesProvided: ["3D Architectural Fitting", "ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "On-Site Fabrication"],
+    images: [
+      "/projects/3D agbe road abule egba/20241028_140650.jpg",
+      "/projects/3D agbe road abule egba/20241024_100647.jpg",
+      "/projects/3D agbe road abule egba/20241024_162350.jpg"
+    ],
+    videos: [
+      "/projects/3D agbe road abule egba/20241024_100610.mp4",
+      "/projects/3D agbe road abule egba/20241027_164643.mp4",
+      "/projects/3D agbe road abule egba/20241027_164814.mp4",
+      "/projects/3D agbe road abule egba/20241028_140715.mp4",
+      "/projects/3D agbe road abule egba/20241028_140723.mp4"
+    ]
+  },
+  {
+    id: "proj-3d-ikate-lekki",
+    title: "Ikate Lekki Luxury 3D Facade & Exterior Elevation",
+    slug: "ikate-lekki-luxury-3d-facade-exterior-elevation",
+    location: "Ikate, Lekki, Lagos State",
+    year: "2025",
+    category: "3D Designs",
+    projectType: "Luxury Architectural 3D Rendering & Cladding",
+    client: "Private Real Estate Developer",
+    projectDates: "August 2025",
+    delivery: "Completed on Schedule",
+    duration: "3 Weeks",
+    shortDescription: "High-end 3D architectural facade design, custom geometric panel framing, and luxury exterior finish in Ikate, Lekki.",
+    overview: "High-specification residential project in Ikate, Lekki. HORLARLEKX developed photo-realistic 3D architectural models followed by full-scale exterior cladding execution with premium composite panels.",
+    challenge: "Meeting ultra-modern luxury architectural standards with continuous geometric joint lines and integrated exterior accent lighting.",
+    solution: "Engineered high-precision laser-cut aluminum panels anchored on heavy-duty concealed brackets, delivering an ultra-sleek modern elevation.",
+    servicesProvided: ["3D Architectural Fitting", "ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "Architectural Lighting Support"],
+    images: [
+      "/projects/3D design ikate lekki/20250806_131432.jpg",
+      "/projects/3D design ikate lekki/20250807_135320.jpg",
+      "/projects/3D design ikate lekki/20250808_102503.jpg",
+      "/projects/3D design ikate lekki/20250808_102513.jpg",
+      "/projects/3D design ikate lekki/20250808_102528.jpg"
+    ],
+    videos: [
+      "/projects/3D design ikate lekki/20250723_164441.mp4",
+      "/projects/3D design ikate lekki/20250802_145542.mp4",
+      "/projects/3D design ikate lekki/20250806_131456.mp4"
+    ]
+  },
+  {
+    id: "proj-abuja-wuse2",
+    title: "Abuja Wuse 2 Corporate Commercial Facade Cladding",
+    slug: "abuja-wuse-2-corporate-commercial-facade-cladding",
+    location: "Wuse 2, Abuja, FCT",
+    year: "2023",
+    category: "ACP/ALUCOBOND",
+    projectType: "Corporate Commercial Building Elevation",
+    client: "Corporate Development Client",
+    projectDates: "November 2023",
+    delivery: "Completed on Schedule",
+    duration: "4 Weeks",
+    shortDescription: "Premium composite panel cladding, weather-sealed joints, and commercial exterior transformation in Wuse 2, Abuja.",
+    overview: "Landmark commercial elevation contract in the heart of Wuse 2, Abuja. HORLARLEKX fabricated and installed premium ACP composite panels to elevate the corporate aesthetic of the complex.",
+    challenge: "Installing multi-tiered cladding panels under strict commercial noise and timing regulations in high-density Abuja business center.",
+    solution: "Utilized modular pre-fabricated panel units and high-capacity scaffold systems to execute clean, rapid installation with minimal downtime.",
+    servicesProvided: ["ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "Aluminium Works", "Structural Steel Sub-framing"],
+    images: [
+      "/projects/Abuja wuse 2/20231105_073358.jpg",
+      "/projects/Abuja wuse 2/20231104_175001.jpg",
+      "/projects/Abuja wuse 2/20231104_175019.jpg"
+    ]
+  },
+  {
+    id: "proj-adex-event-3d",
+    title: "Adex Event Center 3D Design & Facade Cladding",
+    slug: "adex-event-center-3d-design-facade-cladding",
+    location: "Lagos State",
+    year: "2025",
+    category: "3D Designs",
+    projectType: "Event Facility Facade & Branding",
+    client: "Adex Events Center",
+    projectDates: "May 2025",
+    delivery: "Completed within Budget & Schedule",
+    duration: "3 Weeks",
+    shortDescription: "Custom 3D exterior structure design, metallic ACP panel cladding, and decorative event center branding.",
+    overview: "Architectural facade enhancement for Adex Event Center. HORLARLEKX designed 3D spatial models and executed complete metallic composite panel cladding with integrated lighting features.",
+    challenge: "Creating a grand, high-impact entrance archway and fascia capable of accommodating decorative festive lighting displays.",
+    solution: "Built custom steel cantilever trusses covered in high-gloss fire-retardant ACP sheets with pre-drilled waterproof electrical conduit channels.",
+    servicesProvided: ["3D Architectural Fitting", "ACP Cladding Panels (ALUCOBOND)", "Signage", "Steel Sub-framing"],
+    images: [
+      "/projects/Adex event 3D project/20250521_114027.jpg",
+      "/projects/Adex event 3D project/20250521_114027.jpg",
+      "/projects/Adex event 3D project/20250509_185156.jpg",
+      "/projects/Adex event 3D project/20250512_183827.jpg",
+      "/projects/Adex event 3D project/Snapchat-1022486131.jpg"
+    ],
+    videos: [
+      "/projects/Adex event 3D project/20250518_094302.mp4"
+    ]
+  },
+  {
+    id: "proj-ajah-badore-road",
+    title: "Badore Road Commercial Building ACP Facade Project",
+    slug: "badore-road-ajah-commercial-building-acp-facade",
+    location: "Badore Road, Ajah, Lagos State",
+    year: "2024",
+    category: "Facades",
+    projectType: "Commercial Building Elevation",
+    client: "Commercial Property Owner",
+    projectDates: "January 2024",
+    delivery: "Completed on Schedule",
+    duration: "3 Weeks",
+    shortDescription: "Full building exterior retrofitting, structural aluminium grid fitting, and modern panel cladding along Badore Road.",
+    overview: "Complete exterior facade revitalization along Badore Road, Ajah. Scope included dismantling deteriorated facade trim, installing heavy-duty aluminum sub-frames, and fitting premium ACP panels.",
+    challenge: "Refurbishing a coastal building envelope subjected to high salinity air and weathering.",
+    solution: "Applied anti-corrosive powder-coated aluminum sub-framing and high-durability PVDF composite panels.",
+    servicesProvided: ["Building Facade Solutions", "ACP Cladding Panels (ALUCOBOND)", "Aluminium Works"],
+    images: [
+      "/projects/Ajah badore road/20240114_132646.jpg",
+      "/projects/Ajah badore road/20240106_154140.jpg",
+      "/projects/Ajah badore road/20240114_110654.jpg",
+      "/projects/Ajah badore road/20240114_110740.jpg",
+    ],
+    videos: [
+      "/projects/Ajah badore road/20240110_174923.mp4",
+      "/projects/Ajah badore road/20240110_174934.mp4"
+    ]
+  },
+  {
+    id: "proj-badore-ajah-flat-board",
+    title: "Badore Ajah Flat Board Signage & Commercial Facade",
+    slug: "badore-ajah-flat-board-signage-commercial-facade",
+    location: "Badore, Ajah, Lagos State",
+    year: "2024",
+    category: "Signage",
+    projectType: "Flat Board Signage & Storefront Cladding",
+    client: "Retail & Commercial Storefront Client",
+    projectDates: "August 2024",
+    delivery: "Completed in 10 Days",
+    duration: "10 Days",
+    shortDescription: "Precision flat board signage mounting, exterior ACP panel wrapping, and retail frontage enhancement in Badore.",
+    overview: "High-visibility commercial retail branding project in Badore, Ajah. HORLARLEKX constructed seamless flat board signage frames and applied high-resolution corporate branding panels.",
+    challenge: "Creating a clean, seamless sign surface across a wide storefront with invisible fixing points.",
+    solution: "Utilized flush-mount aluminum extrusion channels and hidden bracket systems for a sleek modern finish.",
+    servicesProvided: ["Signage", "ACP Cladding Panels", "Retail Branding"],
+    images: [
+      "/projects/Badore ajah  flat board/20240817_115514.jpg",
+      "/projects/Badore ajah  flat board/20240810_181645.jpg",
+      "/projects/Badore ajah  flat board/20240812_185114.jpg",
+      "/projects/Badore ajah  flat board/20240813_190254.jpg",
+      "/projects/Badore ajah  flat board/20240816_191342.jpg",
+    ],
+    // videos: [
+    //   "/projects/Badore ajah  flat board/Snapchat-1039680949.mp4",
+    //   "/projects/Badore ajah  flat board/Snapchat-1179926643.mp4",
+    //   "/projects/Badore ajah  flat board/Snapchat-787662679.mp4"
+    // ]
+  },
+  {
+    id: "proj-burger-king-vi",
+    title: "Burger King Victoria Island Commercial Facade & Branding",
+    slug: "burger-king-victoria-island-facade-branding",
+    location: "Victoria Island, Lagos State",
+    year: "2024",
+    category: "Signage",
+    projectType: "International Franchise Retail Elevation",
+    client: "Burger King Nigeria",
+    projectDates: "July 2024",
+    delivery: "Completed on Schedule",
+    duration: "3 Weeks",
+    shortDescription: "Corporate franchise red and silver ACP panel cladding, exterior signage, and flagship storefront elevation in VI.",
+    overview: "Flagship commercial facade installation for Burger King in Victoria Island. HORLARLEKX executed precision composite panel cladding, illuminated signage supports, and exterior architectural trim adhering strictly to international brand standards.",
+    challenge: "Meeting rigid international architectural brand specifications with precise Pantone color matching and tight turnaround time.",
+    solution: "Imported certified PVDF color-matched composite panels and fabricated custom steel support framework with millimeter precision.",
+    servicesProvided: ["Signage", "ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "Retail Branding"],
+    images: [
+      "/projects/Burger King  vi/20240717_104202.jpg",
+      "/projects/Burger King  vi/20240717_104204.jpg",
+      "/projects/Burger King  vi/20240718_175451.jpg",
+      "/projects/Burger King  vi/20240720_170918.jpg"
+    ],
+    videos: [
+      "/projects/Burger King  vi/20240720_111801.mp4",
+      // "/projects/Burger King  vi/Snapchat-1171572322.mp4",
+      // "/projects/Burger King  vi/Snapchat-1362381720.mp4",
+      // "/projects/Burger King  vi/Snapchat-2074761102.mp4",
+      // "/projects/Burger King  vi/Snapchat-364835400.mp4"
+    ]
+  },
+  {
+    id: "proj-dkk-ajah",
+    title: "DKK Commercial Complex Facade & Cladding",
+    slug: "dkk-commercial-complex-facade-cladding-ajah",
+    location: "Ajah, Lagos State",
+    year: "2024",
+    category: "ACP/ALUCOBOND",
+    projectType: "Commercial Building Facade",
+    client: "DKK Properties",
+    projectDates: "June 2024",
+    delivery: "Completed on Schedule",
+    duration: "2 Weeks",
+    shortDescription: "Turnkey exterior cladding, structural aluminum sub-framing, and glass elevation for DKK Complex in Ajah.",
+    overview: "Commercial building frontage transformation for DKK Complex in Ajah. Scope covered installing high-durability metallic ACP panels, decorative glass window reveals, and protective canopy cladding.",
+    challenge: "Integrating ACP cladding panels seamlessly around existing structural concrete cantilever balconies.",
+    solution: "Custom-bent composite panel corners on-site and installed flexible silicone weather sealant joints.",
+    servicesProvided: ["ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "Aluminium Works"],
+    images: [
+      "/projects/Dkk project ajah/20240605_153823.jpg",
+      "/projects/Dkk project ajah/20240612_185126.jpg",
+      "/projects/Dkk project ajah/20240612_185129.jpg",
+      "/projects/Dkk project ajah/20240612_190328.jpg"
+    ],
+    videos: [
+      "/projects/Dkk project ajah/20240605_153828.mp4"
+    ]
+  },
+  {
+    id: "proj-hotel-isolo-temple-hill",
+    title: "Isolo Luxury Hotel Building Facade Retrofit",
+    slug: "isolo-luxury-hotel-building-facade-retrofit",
+    location: "Isolo (Beside Temple Hill), Lagos State",
+    year: "2024",
+    category: "General Construction",
+    projectType: "Hospitality Facade & Envelope Retrofit",
+    client: "Hotel & Hospitality Developer",
+    projectDates: "January – March 2024",
+    delivery: "Completed on Schedule",
+    duration: "6 Weeks",
+    shortDescription: "Comprehensive multi-story hotel facade restoration, ACP composite panel installation, and exterior glazing in Isolo.",
+    overview: "Major hospitality elevation contract for a premier hotel complex beside Temple Hill in Isolo. HORLARLEKX executed full envelope retrofitting, upgrading the exterior with modern architectural cladding panels and thermal window glazing.",
+    challenge: "Executing multi-story exterior wall cladding while hotel operations remained active on lower floors.",
+    solution: "Implemented section-by-section scaffold wrapping with heavy-duty safety netting, maintaining full operational access for guests.",
+    servicesProvided: ["General Construction", "ACP Cladding Panels (ALUCOBOND)", "Building Facade Solutions", "Aluminium Works"],
+    images: [
+      "/projects/Hotel  at isolo beside temple hill/20240301_134756.jpg",
+      "/projects/Hotel  at isolo beside temple hill/20240117_173621.jpg",
+      "/projects/Hotel  at isolo beside temple hill/20240122_071621.jpg",
+      "/projects/Hotel  at isolo beside temple hill/20240124_185036.jpg",
+      "/projects/Hotel  at isolo beside temple hill/20240127_165937.jpg",
+      "/projects/Hotel  at isolo beside temple hill/20240127_182121.jpg",
+      "/projects/Hotel  at isolo beside temple hill/20240127_182156.jpg",
+      "/projects/Hotel  at isolo beside temple hill/20240127_190035.jpg",
+      "/projects/Hotel  at isolo beside temple hill/20240301_220439.jpg"
+    ],
+    videos: [
+      "/projects/Hotel  at isolo beside temple hill/20240126_171037.mp4"
+    ]
+  },
+  {
+    id: "proj-ondo-state-akute",
+    title: "Akute Garage Commercial Complex Facade & Roofing",
+    slug: "akute-garage-commercial-complex-facade-roofing",
+    location: "Akute Garage, Ogun / Lagos Border",
+    year: "2023",
+    category: "General Construction",
+    projectType: "Commercial Building Elevation & Roofing",
+    client: "Ondo State Commercial Transport Association / Property Developer",
+    projectDates: "November – December 2023",
+    delivery: "Completed on Schedule",
+    duration: "5 Weeks",
+    shortDescription: "Heavy-duty long-span aluminum roofing, steel truss fabrication, and ACP panel storefront cladding at Akute Garage.",
+    overview: "Turnkey commercial hub project at Akute Garage. HORLARLEKX fabricated structural steel roof trusses, installed durable long-span aluminum roof sheets, and cladded commercial storefront elevations with composite panels.",
+    challenge: "Building wide-span roofing over an active commercial transport hub during heavy transit peak hours.",
+    solution: "Engineered prefabricated modular steel trusses hoisted during off-peak hours and installed heavy-gauge leak-proof aluminum roofing panels.",
+    servicesProvided: ["General Construction", "Roofing", "ACP Cladding Panels", "Structural Framing"],
+    images: [
+      "/projects/Ondo state  at akute garage/20231202_103257.jpg",
+      "/projects/Ondo state  at akute garage/20231104_175019.jpg",
+      "/projects/Ondo state  at akute garage/20231105_073358.jpg",
+      "/projects/Ondo state  at akute garage/20231126_175052.jpg",
+      "/projects/Ondo state  at akute garage/20231126_175217.jpg",
+      "/projects/Ondo state  at akute garage/20231128_085325.jpg",
+      "/projects/Ondo state  at akute garage/20231128_174645.jpg",
+      "/projects/Ondo state  at akute garage/20231203_172203.jpg",
+      "/projects/Ondo state  at akute garage/20231203_172219.jpg"
+    ],
+    videos: [
+      "/projects/Ondo state  at akute garage/20231105_065352.mp4",
+      "/projects/Ondo state  at akute garage/20231128_174619.mp4",
+      "/projects/Ondo state  at akute garage/20231202_164436.mp4"
+    ]
+  },
+  {
+    id: "proj-shop-front-obasanjo",
+    title: "Obasanjo Complex Storefront & Glass Elevation",
+    slug: "obasanjo-complex-storefront-glass-elevation",
+    location: "Obasanjo Complex, Ogun State",
+    year: "2024",
+    category: "Aluminium",
+    projectType: "Retail Storefront & Glass Glazing",
+    client: "Retail Store Client",
+    projectDates: "April 2024",
+    delivery: "Completed in 7 Days",
+    duration: "7 Days",
+    shortDescription: "Custom aluminum store front framing, toughened display glass installation, and modern retail facade in Obasanjo Complex.",
+    overview: "Modern retail storefront elevation contract in Obasanjo Complex. Scope included installing heavy-duty aluminum casement frames, high-clarity safety display glass, and entrance sliding doors.",
+    challenge: "Maximizing storefront visibility with wide clear glass panes while maintaining structural frame stability.",
+    solution: "Fitted heavy-gauge aluminum mullions reinforced with internal structural steel core pins.",
+    servicesProvided: ["Aluminium Works", "Glass Installation", "Storefront Systems"],
+    images: [
+       "/projects/Shop front Obasanjo/20240407_185405.jpg",
+      "/projects/Shop front Obasanjo/20240407_182425.jpg",
+      "/projects/Shop front Obasanjo/20240407_182426.jpg",
+      "/projects/Shop front Obasanjo/20240407_185346.jpg",
+    ]
+  },
+  {
+    id: "proj-sokoto-road-roofing",
+    title: "Sokoto Road Structural Roofing & Timber Truss Project",
+    slug: "sokoto-road-structural-roofing-timber-truss",
+    location: "Sokoto Road",
+    year: "2026",
+    category: "Roofing",
+    projectType: "Residential & Commercial Roofing",
+    client: "Private Property Client",
+    projectDates: "August 2026",
+    delivery: "Completed on Schedule",
+    duration: "3 Weeks",
+    shortDescription: "Timber truss framing, stone-coated metal roof sheet laying, and ridge capping installation along Sokoto Road.",
+    overview: "Full roof installation and structural timber carpentry project along Sokoto Road. HORLARLEKX built heavy treated timber rafters and installed high-grade stone-coated roof tiles with anti-leak ridge capping.",
+    challenge: "Ensuring complete storm resistance and zero-leakage across intricate roof valleys and hips.",
+    solution: "Installed high-density roofing underlayment membranes and double-sealed overlap joint fasteners.",
+    servicesProvided: ["Roofing", "Carpentry", "Timber Trussing"],
+    images: [
+      "/projects/Sokoto road roofing/IMG-20260821-WA0029.jpg",
+      "/projects/Sokoto road roofing/IMG-20260821-WA0106.jpg"
+    ],
+    videos: [
+      "/projects/Sokoto road roofing/VID-20260821-WA0111.mp4",
+      "/projects/Sokoto road roofing/VID-20260821-WA0118.mp4",
+      "/projects/Sokoto road roofing/VID-20260821-WA0119.mp4"
+    ]
+  },
+  {
+    id: "proj-heal360-matogun",
+    title: "VaHeal360 Beauty Center Facade & Corporate Signage",
+    slug: "vaheal360-beauty-center-matogun-facade-signage",
+    location: "Matogun, Ogun State",
+    year: "2026",
+    category: "Signage",
+    projectType: "Beauty & Wellness Storefront Facade",
+    client: "VaHeal360 Beauty & Wellness",
+    projectDates: "March – April 2026",
+    delivery: "Completed on Schedule",
+    duration: "2 Weeks",
+    shortDescription: "Sleek modern ACP panel facade wrapping, custom illuminated 3D logo signage, and storefront branding for Heal360 Matogun.",
+    overview: "Turnkey exterior commercial elevation for Heal360 Beauty in Matogun. Scope featured premium ACP panel cladding, 3D acrylic signage with backlighting, and weather-sealed entrance glass doors.",
+    challenge: "Creating a high-end luxury aesthetic for a beauty spa storefront along a busy commercial avenue.",
+    solution: "Combined sleek high-gloss metallic composite panels with gold-accented 3D channel letter signage.",
+    servicesProvided: ["Signage", "ACP Cladding Panels (ALUCOBOND)", "Retail Branding", "Building Facade Solutions"],
+    images: [
+      "/projects/Var heal360 beauty in matogun/20260411_190556.jpg",
+      "/projects/Var heal360 beauty in matogun/20260410_114301.jpg",
+      "/projects/Var heal360 beauty in matogun/20260410_155403.jpg",
+      "/projects/Var heal360 beauty in matogun/20260411_201138.jpg",
+      "/projects/Var heal360 beauty in matogun/20260411_201319.jpg"
     ]
   }
 ];

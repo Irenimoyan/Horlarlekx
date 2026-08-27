@@ -49,7 +49,7 @@ export const companyInfo = {
   
   // Clean structured placeholders as instructed - NO fake figures
   stats: [
-    { label: "Projects Completed", value: "15+", description: "Successfully delivered commercial, residential & public projects" },
+    { label: "Projects Completed", value: "27+", description: "Successfully delivered commercial, residential & public projects" },
     { label: "Years of Experience", value: "5+", description: "Hands-on craftsmanship & architectural engineering mastery" },
     { label: "Skilled Professionals", value: "10+", description: "Fabricators, installers, carpenters & site managers" },
     { label: "Service Categories", value: "18+", description: "Turnkey building finishing & exterior facade solutions" }

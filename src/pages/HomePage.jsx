@@ -22,10 +22,10 @@ export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeLightboxProject, setActiveLightboxProject] = useState(null);
 
-  // Filter projects based on tab
-  const filteredProjects = selectedCategory === 'All'
+  // Filter projects based on tab and limit to 6 for homepage display
+  const filteredProjects = (selectedCategory === 'All'
     ? projectsData
-    : projectsData.filter((p) => p.category === selectedCategory || (selectedCategory === 'ACP/ALUCOBOND' && p.category.includes('ACP')));
+    : projectsData.filter((p) => p.category === selectedCategory || (selectedCategory === 'ACP/ALUCOBOND' && p.category.includes('ACP')))).slice(0, 6);
 
   // Featured 6 core services for homepage
   const featuredServices = servicesData.filter((s) => s.isFeatured).slice(0, 6);
@@ -346,17 +346,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. COMPANY STATISTICS (Clear Placeholders as requested) */}
+      {/* 8. COMPANY STATISTICS */}
       <section className="py-16 section-double-bg-white relative border-y border-custom-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <Badge variant="placeholder" size="sm">Company Track Record</Badge>
+            <Badge variant="cyan" size="sm">Company Track Record</Badge>
             <h3 className="text-xl font-bold text-primary font-heading mt-2">
               Performance & Capacity Overview
             </h3>
-            <p className="text-xs text-custom-darkText/80 max-w-lg mx-auto mt-1">
-              Official figures will be updated upon final verification. Structure prepared for seamless client input.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

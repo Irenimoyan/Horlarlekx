@@ -19,6 +19,8 @@ import FAQPage from './pages/FAQPage';
 import ContactPage from './pages/ContactPage';
 import RequestQuotePage from './pages/RequestQuotePage';
 
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
 // Scroll to top helper on page navigation
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -33,6 +35,7 @@ export default function App() {
 
   return (
     <Router>
+      <SpeedInsights />
       {isLoading && <Loader onFinish={() => setIsLoading(false)} />}
       <ScrollToTop />
       <div className="min-h-screen bg-navy-950 text-slate-100 flex flex-col font-sans selection:bg-brand-orange selection:text-white">

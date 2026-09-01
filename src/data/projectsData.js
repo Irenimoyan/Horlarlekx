@@ -332,6 +332,7 @@ export const projectsData = [
   },
   {
     id: "proj-egbeda-akowonjo",
+    
     title: "Egbeda-Akowonjo Commercial Facade & ACP Cladding",
     slug: "egbeda-akowonjo-commercial-building-facade",
     location: "Egbeda-Akowonjo, Lagos State",

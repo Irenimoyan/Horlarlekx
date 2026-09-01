@@ -1,10 +1,10 @@
 export const executiveLeadership = {
-  title: "Founder & Managing Director",
-  name: "To be provided", // Clean placeholder as instructed
-  biography: "To be provided", // Clean placeholder as instructed
-  experienceYears: "To be provided", // Clean placeholder as instructed
-  photo: null, // Placeholder image will be rendered gracefully
-  roleDescription: "Provides overall strategic direction, project oversight, and engineering quality assurance across all HORLARLEKX construction and cladding projects in Nigeria."
+  // title: "Founder & Managing Director",
+  // name: "To be provided",
+  // biography: "To be provided",
+  // experienceYears: "To be provided",
+  // photo: null,
+  // roleDescription: "Experienced site supervisor overseeing daily construction operations, ensuring quality workmanship, safety compliance, and timely project delivery across all HORLARLEKX construction and cladding projects in Nigeria."
 };
 
 export const specialistTeams = [
@@ -61,5 +61,14 @@ export const specialistTeams = [
     iconName: "HardHat",
     description: "Experienced site engineers ensuring safety compliance, project scheduling, quality control, and client communications.",
     keyCapabilities: ["Site Supervision", "Safety Protocols", "Material Procurement", "Milestone Tracking"]
+  }
+];
+
+export const keyPersonnel = [
+  {
+    name: "Muhammed Sherrif",
+    role: "Site Supervisor",
+    photo: "/Team/Muhammed Sherrif(Site Supervisor).jpeg",
+    description: "Experienced site supervisor overseeing daily construction operations, ensuring quality workmanship, safety compliance, and timely project delivery across all HORLARLEKX project sites."
   }
 ];

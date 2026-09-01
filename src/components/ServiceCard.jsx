@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Layers, Shield, Building2, Compass, Maximize2, Signpost, TowerControl, Frame, Box, Spline, Home, Hammer, Armchair, Wrench, Grid, HardHat, Paintbrush, Megaphone } from 'lucide-react';
+import { ArrowRight, Layers, Shield, Building2, Compass, Maximize2, Signpost, TowerControl, Frame, Box, Spline, Home, Hammer, Armchair, Wrench, Grid, HardHat, Paintbrush, Megaphone, Droplets } from 'lucide-react';
 import Badge from './Badge';
 import { getOptimizedImageUrl } from '../utils/imageHelper';
 
 // Map string icon names to Lucide components safely
 const iconMap = {
-  Layers, Shield, Building2, Compass, Maximize2, Signpost, TowerControl, Frame, Box, Spline, Home, Hammer, Armchair, Wrench, Grid, HardHat, Paintbrush, Megaphone
+  Layers, Shield, Building2, Compass, Maximize2, Signpost, TowerControl, Frame, Box, Spline, Home, Hammer, Armchair, Wrench, Grid, HardHat, Paintbrush, Megaphone, Droplets
 };
 
 export default function ServiceCard({ service, className = '' }) {

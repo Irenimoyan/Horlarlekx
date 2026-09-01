@@ -3,8 +3,8 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import SectionHeader from '../components/SectionHeader';
 import Badge from '../components/Badge';
 import Button from '../components/Button';
-import { executiveLeadership, specialistTeams } from '../data/teamData';
-import { ShieldCheck, HardHat, CheckCircle2, UserCheck, Layers, Frame, Box, Signpost, Wrench, Hammer, Home, Grid, ArrowRight } from 'lucide-react';
+import { specialistTeams, keyPersonnel } from '../data/teamData';
+import { ShieldCheck, HardHat, CheckCircle2, Layers, Frame, Box, Signpost, Wrench, Hammer, Home, Grid, ArrowRight } from 'lucide-react';
 
 const iconMap = {
   Layers, Frame, Box, Signpost, Wrench, Hammer, Home, Grid, HardHat
@@ -27,37 +27,39 @@ export default function TeamPage() {
           </p>
         </div>
 
-        {/* 1. Executive Leadership Section (Clean Placeholders as requested) */}
+        {/* Key Personnel Section */}
         <div className="py-16 border-b border-navy-800">
-          <div className="bg-navy-900 rounded-2xl p-8 border border-navy-800 max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              {/* Photo Placeholder */}
-              <div className="w-40 h-40 rounded-2xl bg-navy-950 border-2 border-dashed border-navy-700 flex flex-col items-center justify-center p-4 text-center shrink-0">
-                <UserCheck className="w-10 h-10 text-brand-orange mb-2" />
-                <Badge variant="placeholder" size="sm">Photo To Be Provided</Badge>
+          <SectionHeader
+            badgeText="Key Personnel"
+            title="Meet Our Team"
+            subtitle="Dedicated professionals who bring expertise and leadership to every project."
+            centered
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            {keyPersonnel.map((person, idx) => (
+              <div
+                key={idx}
+                className="bg-navy-900/90 rounded-2xl border border-navy-800 hover:border-brand-orange/60 transition-all duration-300 shadow-lg overflow-hidden group"
+              >
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img
+                    src={person.photo}
+                    alt={person.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6 space-y-3">
+                  <Badge variant="orange">{person.role}</Badge>
+                  <h3 className="text-xl font-bold text-white font-heading">
+                    {person.name}
+                  </h3>
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    {person.description}
+                  </p>
+                </div>
               </div>
-
-              {/* Bio Placeholder */}
-              <div className="space-y-3 text-center md:text-left">
-                <Badge variant="navy">{executiveLeadership.title}</Badge>
-                
-                <h3 className="text-2xl font-bold text-white font-heading">
-                  Name: <span className="font-mono text-amber-400">{executiveLeadership.name}</span>
-                </h3>
-
-                <p className="text-xs text-slate-400 font-mono">
-                  Years of Experience: <span className="text-amber-400">{executiveLeadership.experienceYears}</span>
-                </p>
-
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Biography: <span className="italic text-slate-400">{executiveLeadership.biography}</span>
-                </p>
-
-                <p className="text-slate-300 text-xs leading-relaxed border-t border-navy-800 pt-3">
-                  {executiveLeadership.roleDescription}
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 

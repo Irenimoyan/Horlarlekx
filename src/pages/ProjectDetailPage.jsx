@@ -33,6 +33,9 @@ export default function ProjectDetailPage() {
         {/* Hero Title & Meta */}
         <div className="py-6 border-b border-navy-800 space-y-4">
           <div className="flex flex-wrap items-center gap-2">
+            {project.showcaseNumber && (
+              <Badge variant="cyan">{project.showcaseNumber}</Badge>
+            )}
             <Badge variant="orange">{project.category}</Badge>
             <span className="text-xs text-slate-400 font-mono bg-navy-900 px-3 py-1 rounded-full border border-navy-800">
               {project.projectType}
@@ -96,6 +99,11 @@ export default function ProjectDetailPage() {
               <p className="text-slate-300 text-base leading-relaxed">
                 {project.overview}
               </p>
+              {project.motto && (
+                <div className="p-4 mt-4 rounded-xl bg-navy-900/90 border-l-4 border-brand-orange text-slate-200 italic text-sm font-medium shadow-md">
+                  "{project.motto}"
+                </div>
+              )}
             </div>
 
             {/* Challenge & Solution Split */}

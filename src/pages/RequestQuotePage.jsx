@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { useForm, ValidationError } from '@formspree/react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import Badge from '../components/Badge';
 import Button from '../components/Button';
@@ -11,6 +12,7 @@ export default function RequestQuotePage() {
   const initialService = searchParams.get('service');
 
   const [currentStep, setCurrentStep] = useState(1);
+  const [state, handleSubmit, reset] = useForm('xdeogkjp');
 
   // Form state
   const [formData, setFormData] = useState({
@@ -34,8 +36,6 @@ export default function RequestQuotePage() {
     // Step 5
     uploadedFiles: []
   });
-
-  const [submitted, setSubmitted] = useState(false);
 
   const allServicesOptions = [
     'ACP/ALUCOBOND Cladding',
@@ -102,37 +102,6 @@ export default function RequestQuotePage() {
     if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    try {
-      await fetch("https://formspree.io/f/mdenrnzr", {
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          fullName: formData.fullName,
-          companyName: formData.companyName,
-          email: formData.email,
-          phone: formData.phone,
-          whatsappNumber: formData.whatsappNumber,
-          projectType: formData.projectType,
-          projectLocation: formData.projectLocation,
-          selectedServices: formData.selectedServices.join(', '),
-          projectDescription: formData.projectDescription,
-          estimatedMeasurements: formData.estimatedMeasurements,
-          startDate: formData.startDate,
-          estimatedBudget: formData.estimatedBudget,
-          uploadedFiles: formData.uploadedFiles.join(', ')
-        })
-      });
-    } catch (err) {
-      console.error("Formspree submission error:", err);
-    }
-  };
-
   const stepsList = [
     { num: 1, label: 'Contact Info' },
     { num: 2, label: 'Project Type' },
@@ -166,7 +135,7 @@ export default function RequestQuotePage() {
         </div>
 
         {/* Step Indicator Bar */}
-        {!submitted && (
+        {!state.succeeded && (
           <div className="py-8">
             <div className="grid grid-cols-5 gap-2 text-center">
               {stepsList.map((st) => (
@@ -198,7 +167,7 @@ export default function RequestQuotePage() {
         {/* Main Form Container */}
         <div className="bg-navy-900 p-6 sm:p-10 rounded-2xl border border-navy-800 shadow-2xl">
           
-          {submitted ? (
+          {state.succeeded ? (
             /* Submission Confirmation Screen */
             <div className="text-center py-12 space-y-6">
               <div className="w-20 h-20 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border-2 border-emerald-500 shadow-xl">
@@ -208,11 +177,11 @@ export default function RequestQuotePage() {
               <Badge variant="emerald" size="lg">Quotation Request Received</Badge>
 
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
-                Thank you for contacting HORLARLEKX.
+                Thank you for contacting HORLARLEKX SERVICES.
               </h2>
 
               <p className="text-slate-300 text-base max-w-lg mx-auto leading-relaxed">
-                Our technical team will review your project specifications and contact you shortly to confirm measurements or send your itemized estimate.
+                Thank you for contacting HORLARLEKX SERVICES. Your project enquiry has been received successfully. Our team will review your request and get back to you shortly.
               </p>
 
               <div className="pt-4 p-6 rounded-xl bg-navy-950 border border-navy-800 max-w-md mx-auto space-y-3">
@@ -229,25 +198,40 @@ export default function RequestQuotePage() {
               </div>
 
               <div className="pt-4">
-                <Button onClick={() => { setSubmitted(false); setCurrentStep(1); }} variant="outline" size="sm">
+                <Button onClick={() => { reset(); setCurrentStep(1); }} variant="outline" size="sm">
                   Submit Another Quote Request
                 </Button>
               </div>
             </div>
           ) : (
-            <form action="https://formspree.io/f/mdenrnzr" method="POST" onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* General Submission Error Banner */}
+              {state.errors && state.errors.length > 0 && (
+                <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold">
+                  We couldn't submit your request. Please check your information and try again.
+                </div>
+              )}
+
               {/* Hidden Inputs for Formspree submission of all multi-step data */}
+              <input type="hidden" name="name" value={formData.fullName} />
               <input type="hidden" name="fullName" value={formData.fullName} />
+              <input type="hidden" name="company" value={formData.companyName} />
               <input type="hidden" name="companyName" value={formData.companyName} />
               <input type="hidden" name="email" value={formData.email} />
               <input type="hidden" name="phone" value={formData.phone} />
+              <input type="hidden" name="preferredContact" value={formData.whatsappNumber} />
               <input type="hidden" name="whatsappNumber" value={formData.whatsappNumber} />
               <input type="hidden" name="projectType" value={formData.projectType} />
+              <input type="hidden" name="location" value={formData.projectLocation} />
               <input type="hidden" name="projectLocation" value={formData.projectLocation} />
+              <input type="hidden" name="service" value={formData.selectedServices.join(', ')} />
               <input type="hidden" name="selectedServices" value={formData.selectedServices.join(', ')} />
               <input type="hidden" name="projectDescription" value={formData.projectDescription} />
+              <input type="hidden" name="message" value={formData.projectDescription} />
+              <input type="hidden" name="measurements" value={formData.estimatedMeasurements} />
               <input type="hidden" name="estimatedMeasurements" value={formData.estimatedMeasurements} />
               <input type="hidden" name="startDate" value={formData.startDate} />
+              <input type="hidden" name="budget" value={formData.estimatedBudget} />
               <input type="hidden" name="estimatedBudget" value={formData.estimatedBudget} />
               <input type="hidden" name="uploadedFiles" value={formData.uploadedFiles.join(', ')} />
               
@@ -528,8 +512,8 @@ export default function RequestQuotePage() {
                     Next Step
                   </Button>
                 ) : (
-                  <Button type="submit" variant="primary" size="lg" icon={Send} iconPosition="right">
-                    SUBMIT PROJECT REQUEST
+                  <Button type="submit" variant="primary" size="lg" icon={Send} iconPosition="right" disabled={state.submitting}>
+                    {state.submitting ? 'SUBMITTING...' : 'SUBMIT PROJECT REQUEST'}
                   </Button>
                 )}
               </div>

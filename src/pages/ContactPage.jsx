@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import SectionHeader from '../components/SectionHeader';
 import Badge from '../components/Badge';
@@ -7,31 +8,7 @@ import { Phone, Mail, MapPin, Clock, MessageSquare, Send, CheckCircle2, ShieldCh
 import { companyInfo } from '../data/companyInfo';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    try {
-      await fetch("https://formspree.io/f/mdenrnzr", {
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-    } catch (err) {
-      console.error("Formspree submission error:", err);
-    }
-  };
+  const [state, handleSubmit, reset] = useForm('xdeogkjp');
 
   return (
     <div className="pt-28 pb-20 section-double-bg-white text-custom-darkText">
@@ -165,17 +142,23 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {submitted ? (
+              {state.succeeded ? (
                 <div className="p-8 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-center space-y-4">
                   <CheckCircle2 className="w-12 h-12 mx-auto text-emerald-400" />
                   <h4 className="font-bold text-xl text-white">Message Sent Successfully</h4>
-                  <p className="text-sm">Thank you for reaching out to HORLARLEKX. Our representative will contact you shortly.</p>
-                  <Button onClick={() => setSubmitted(false)} variant="outline" size="sm">
-                    Send Another Message
+                  <p className="text-sm">Thank you for contacting HORLARLEKX SERVICES. Your project enquiry has been received successfully. Our team will review your request and get back to you shortly.</p>
+                  <Button onClick={reset} variant="outline" size="sm">
+                    Submit Another Message
                   </Button>
                 </div>
               ) : (
-                <form action="https://formspree.io/f/mdenrnzr" method="POST" onSubmit={handleSubmit} className="space-y-4 text-sm">
+                <form onSubmit={handleSubmit} className="space-y-4 text-sm">
+                  {state.errors && state.errors.length > 0 && (
+                    <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold">
+                      We couldn't submit your request. Please check your information and try again.
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
@@ -184,10 +167,9 @@ export default function ContactPage() {
                         name="name"
                         required
                         placeholder="e.g. Arc. Oladipo Adeleke"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange"
                       />
+                      <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
 
                     <div>
@@ -197,10 +179,9 @@ export default function ContactPage() {
                         name="phone"
                         required
                         placeholder="07055534249"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange"
                       />
+                      <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
                   </div>
 
@@ -212,10 +193,9 @@ export default function ContactPage() {
                         name="email"
                         required
                         placeholder="client@company.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange"
                       />
+                      <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
 
                     <div>
@@ -225,10 +205,9 @@ export default function ContactPage() {
                         name="subject"
                         required
                         placeholder="e.g. ACP Cladding Quote Inquiry"
-                        value={formData.subject}
-                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                         className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange"
                       />
+                      <ValidationError prefix="Subject" field="subject" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
                   </div>
 
@@ -239,14 +218,13 @@ export default function ContactPage() {
                       name="message"
                       required
                       placeholder="Detail your project requirements, location, measurements, or timeline..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange"
                     />
+                    <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-400 text-xs mt-1" />
                   </div>
 
-                  <Button type="submit" variant="primary" size="lg" icon={Send} iconPosition="right" className="w-full">
-                    SEND MESSAGE
+                  <Button type="submit" variant="primary" size="lg" icon={Send} iconPosition="right" className="w-full" disabled={state.submitting}>
+                    {state.submitting ? 'Sending...' : 'SEND MESSAGE'}
                   </Button>
                 </form>
               )}

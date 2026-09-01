@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import SectionHeader from '../components/SectionHeader';
 import Badge from '../components/Badge';
@@ -7,31 +8,7 @@ import { HardHat, Send, CheckCircle2 } from 'lucide-react';
 import { companyInfo } from '../data/companyInfo';
 
 export default function CareersPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    trade: 'ACP Cladding Installer',
-    experience: '',
-    location: ''
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    try {
-      await fetch("https://formspree.io/f/mdenrnzr", {
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-    } catch (err) {
-      console.error("Formspree submission error:", err);
-    }
-  };
+  const [state, handleSubmit, reset] = useForm('xdeogkjp');
 
   return (
     <div className="pt-28 pb-20 section-double-bg-blue text-slate-100">
@@ -96,14 +73,23 @@ export default function CareersPage() {
             <div className="bg-navy-900 p-8 rounded-2xl border border-navy-800 space-y-6">
               <h3 className="text-xl font-bold text-white font-heading">Trade Expression of Interest</h3>
 
-              {submitted ? (
+              {state.succeeded ? (
                 <div className="p-6 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-center space-y-3">
                   <CheckCircle2 className="w-10 h-10 mx-auto text-emerald-400" />
                   <h4 className="font-bold text-lg text-white">Application Received</h4>
                   <p className="text-xs">Thank you for submitting your details. Our human resources team will review your trade skills and contact you when relevant project roles open.</p>
+                  <Button onClick={reset} variant="outline" size="sm">
+                    Submit Another Application
+                  </Button>
                 </div>
               ) : (
-                <form action="https://formspree.io/f/mdenrnzr" method="POST" onSubmit={handleSubmit} className="space-y-4 text-sm">
+                <form onSubmit={handleSubmit} className="space-y-4 text-sm">
+                  {state.errors && state.errors.length > 0 && (
+                    <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold">
+                      We couldn't submit your request. Please check your information and try again.
+                    </div>
+                  )}
+
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
                     <input
@@ -111,10 +97,9 @@ export default function CareersPage() {
                       name="name"
                       required
                       placeholder="e.g. Samuel Adebayo"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange"
                     />
+                    <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-400 text-xs mt-1" />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -125,18 +110,16 @@ export default function CareersPage() {
                         name="phone"
                         required
                         placeholder="08012345678"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange"
                       />
+                      <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
 
                     <div>
                       <label className="block text-xs font-semibold text-slate-300 mb-1">Primary Trade Discipline</label>
                       <select
                         name="trade"
-                        value={formData.trade}
-                        onChange={(e) => setFormData({ ...formData, trade: e.target.value })}
+                        defaultValue="ACP Cladding Installer"
                         className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white focus:outline-none focus:border-brand-orange"
                       >
                         <option>ACP Cladding Installer</option>
@@ -147,6 +130,7 @@ export default function CareersPage() {
                         <option>Carpenter / Furniture</option>
                         <option>Site Supervisor</option>
                       </select>
+                      <ValidationError prefix="Trade" field="trade" errors={state.errors} className="text-red-400 text-xs mt-1" />
                     </div>
                   </div>
 
@@ -157,10 +141,9 @@ export default function CareersPage() {
                       name="location"
                       required
                       placeholder="e.g. Lagos State / Ogun State"
-                      value={formData.location}
-                      onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                       className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange"
                     />
+                    <ValidationError prefix="Location" field="location" errors={state.errors} className="text-red-400 text-xs mt-1" />
                   </div>
 
                   <div>
@@ -169,14 +152,13 @@ export default function CareersPage() {
                       rows={3}
                       name="experience"
                       placeholder="Briefly state your technical background..."
-                      value={formData.experience}
-                      onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
                       className="w-full px-4 py-2.5 bg-navy-950 border border-navy-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-brand-orange"
                     />
+                    <ValidationError prefix="Experience" field="experience" errors={state.errors} className="text-red-400 text-xs mt-1" />
                   </div>
 
-                  <Button type="submit" variant="primary" size="md" icon={Send} iconPosition="right" className="w-full">
-                    Submit Trade Application
+                  <Button type="submit" variant="primary" size="md" icon={Send} iconPosition="right" className="w-full" disabled={state.submitting}>
+                    {state.submitting ? 'Sending...' : 'Submit Trade Application'}
                   </Button>
                 </form>
               )}

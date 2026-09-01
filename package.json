@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vercel/speed-insights": "file:vercel-speed-insights-2.0.0.tgz",
+    "@vercel/speed-insights": "^2.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.28",
     "lucide-react": "^0.428.0",

@@ -8,7 +8,9 @@ import { HardHat, Send, CheckCircle2 } from 'lucide-react';
 import { companyInfo } from '../data/companyInfo';
 
 export default function CareersPage() {
-  const [state, handleSubmit, reset] = useForm('xdeogkjp');
+  const [state, handleSubmit, reset] = useForm('xdeogkjp', {
+    data: { 'horlarlekx@gmail.com': 'horlarlekx@gmail.com' }
+  });
 
   return (
     <div className="pt-28 pb-20 section-double-bg-blue text-slate-100">

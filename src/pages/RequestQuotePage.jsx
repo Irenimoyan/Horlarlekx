@@ -12,6 +12,7 @@ export default function RequestQuotePage() {
   const initialService = searchParams.get('service');
 
   const [currentStep, setCurrentStep] = useState(1);
+  const [stepError, setStepError] = useState('');
   const [state, handleSubmit, reset] = useForm('xdeogkjp');
 
   // Form state
@@ -95,11 +96,68 @@ export default function RequestQuotePage() {
   };
 
   const handleNext = () => {
+    setStepError('');
+    if (currentStep === 1) {
+      if (!formData.fullName.trim() || !formData.email.trim() || !formData.phone.trim()) {
+        setStepError('Please complete all required fields (Full Name, Email, and Phone) before proceeding.');
+        return;
+      }
+    }
+    if (currentStep === 2) {
+      if (!formData.projectLocation.trim()) {
+        setStepError('Please enter your project location before proceeding.');
+        return;
+      }
+    }
+    if (currentStep === 4) {
+      if (!formData.projectDescription.trim()) {
+        setStepError('Please describe your project scope before proceeding.');
+        return;
+      }
+    }
     if (currentStep < 5) setCurrentStep(currentStep + 1);
   };
 
   const handlePrev = () => {
+    setStepError('');
     if (currentStep > 1) setCurrentStep(currentStep - 1);
+  };
+
+  const handleFormSubmit = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    setStepError('');
+
+    if (!formData.fullName.trim() || !formData.email.trim() || !formData.phone.trim()) {
+      setStepError('Please complete all required contact fields (Full Name, Email, and Phone) in Step 1.');
+      setCurrentStep(1);
+      return;
+    }
+
+    const dataPayload = new FormData();
+    dataPayload.append('name', formData.fullName);
+    dataPayload.append('fullName', formData.fullName);
+    dataPayload.append('email', formData.email);
+    dataPayload.append('phone', formData.phone);
+    dataPayload.append('company', formData.companyName || 'N/A');
+    dataPayload.append('companyName', formData.companyName || 'N/A');
+    dataPayload.append('preferredContact', formData.whatsappNumber || formData.phone);
+    dataPayload.append('whatsappNumber', formData.whatsappNumber || formData.phone);
+    dataPayload.append('projectType', formData.projectType || 'Commercial');
+    dataPayload.append('location', formData.projectLocation || 'N/A');
+    dataPayload.append('projectLocation', formData.projectLocation || 'N/A');
+    dataPayload.append('service', formData.selectedServices.join(', ') || 'General Enquiry');
+    dataPayload.append('selectedServices', formData.selectedServices.join(', ') || 'General Enquiry');
+    dataPayload.append('projectDescription', formData.projectDescription || 'No description provided');
+    dataPayload.append('message', formData.projectDescription || 'No description provided');
+    dataPayload.append('measurements', formData.estimatedMeasurements || 'Not specified');
+    dataPayload.append('estimatedMeasurements', formData.estimatedMeasurements || 'Not specified');
+    dataPayload.append('startDate', formData.startDate || 'Immediate');
+    dataPayload.append('budget', formData.estimatedBudget || 'Not specified');
+    dataPayload.append('estimatedBudget', formData.estimatedBudget || 'Not specified');
+    dataPayload.append('uploadedFiles', formData.uploadedFiles.length > 0 ? formData.uploadedFiles.join(', ') : 'None');
+    dataPayload.append('horlarlekx@gmail.com', 'horlarlekx@gmail.com');
+
+    handleSubmit(dataPayload);
   };
 
   const stepsList = [
@@ -204,36 +262,20 @@ export default function RequestQuotePage() {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleFormSubmit} className="space-y-6">
+              {/* Step Error Banner */}
+              {stepError && (
+                <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold">
+                  {stepError}
+                </div>
+              )}
+
               {/* General Submission Error Banner */}
               {state.errors && state.errors.length > 0 && (
                 <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold">
                   We couldn't submit your request. Please check your information and try again.
                 </div>
               )}
-
-              {/* Hidden Inputs for Formspree submission of all multi-step data */}
-              <input type="hidden" name="name" value={formData.fullName} />
-              <input type="hidden" name="fullName" value={formData.fullName} />
-              <input type="hidden" name="company" value={formData.companyName} />
-              <input type="hidden" name="companyName" value={formData.companyName} />
-              <input type="hidden" name="email" value={formData.email} />
-              <input type="hidden" name="phone" value={formData.phone} />
-              <input type="hidden" name="preferredContact" value={formData.whatsappNumber} />
-              <input type="hidden" name="whatsappNumber" value={formData.whatsappNumber} />
-              <input type="hidden" name="projectType" value={formData.projectType} />
-              <input type="hidden" name="location" value={formData.projectLocation} />
-              <input type="hidden" name="projectLocation" value={formData.projectLocation} />
-              <input type="hidden" name="service" value={formData.selectedServices.join(', ')} />
-              <input type="hidden" name="selectedServices" value={formData.selectedServices.join(', ')} />
-              <input type="hidden" name="projectDescription" value={formData.projectDescription} />
-              <input type="hidden" name="message" value={formData.projectDescription} />
-              <input type="hidden" name="measurements" value={formData.estimatedMeasurements} />
-              <input type="hidden" name="estimatedMeasurements" value={formData.estimatedMeasurements} />
-              <input type="hidden" name="startDate" value={formData.startDate} />
-              <input type="hidden" name="budget" value={formData.estimatedBudget} />
-              <input type="hidden" name="estimatedBudget" value={formData.estimatedBudget} />
-              <input type="hidden" name="uploadedFiles" value={formData.uploadedFiles.join(', ')} />
               
               {/* STEP 1: Contact Information */}
               {currentStep === 1 && (
@@ -512,7 +554,7 @@ export default function RequestQuotePage() {
                     Next Step
                   </Button>
                 ) : (
-                  <Button type="submit" variant="primary" size="lg" icon={Send} iconPosition="right" disabled={state.submitting}>
+                  <Button type="submit" onClick={handleFormSubmit} variant="primary" size="lg" icon={Send} iconPosition="right" disabled={state.submitting}>
                     {state.submitting ? 'SUBMITTING...' : 'SUBMIT PROJECT REQUEST'}
                   </Button>
                 )}

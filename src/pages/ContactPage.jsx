@@ -8,7 +8,9 @@ import { Phone, Mail, MapPin, Clock, MessageSquare, Send, CheckCircle2, ShieldCh
 import { companyInfo } from '../data/companyInfo';
 
 export default function ContactPage() {
-  const [state, handleSubmit, reset] = useForm('xdeogkjp');
+  const [state, handleSubmit, reset] = useForm('xdeogkjp', {
+    data: { 'horlarlekx@gmail.com': 'horlarlekx@gmail.com' }
+  });
 
   return (
     <div className="pt-28 pb-20 section-double-bg-white text-custom-darkText">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import SectionHeader from '../components/SectionHeader';
 import ProjectCard from '../components/ProjectCard';
@@ -7,14 +7,35 @@ import Badge from '../components/Badge';
 import Button from '../components/Button';
 import { ArrowRight } from 'lucide-react';
 import { projectsData, projectCategories } from '../data/projectsData';
+import { getPublishedProjects } from '../firebase/projects';
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeLightboxProject, setActiveLightboxProject] = useState(null);
+  const [allProjects, setAllProjects] = useState(projectsData);
+
+  useEffect(() => {
+    let isMounted = true;
+    async function loadFirestoreProjects() {
+      try {
+        const firestoreProjects = await getPublishedProjects();
+        if (isMounted && firestoreProjects && firestoreProjects.length > 0) {
+          setAllProjects(firestoreProjects);
+        }
+      } catch (err) {
+        console.warn('Using static projects fallback:', err.message);
+      }
+    }
+    loadFirestoreProjects();
+    return () => { isMounted = false; };
+  }, []);
 
   const filteredProjects = selectedCategory === 'All'
-    ? projectsData
-    : projectsData.filter((p) => p.category === selectedCategory || (selectedCategory === 'ACP/ALUCOBOND' && p.category.includes('ACP')));
+    ? allProjects
+    : allProjects.filter((p) => 
+        p.category === selectedCategory || 
+        (selectedCategory === 'ACP/ALUCOBOND' && p.category?.includes('ACP'))
+      );
 
   return (
     <div className="pt-28 pb-20 section-double-bg-white text-custom-darkText">
@@ -55,7 +76,7 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
             <ProjectCard
-              key={project.id}
+              key={project.id || project.slug}
               project={project}
               onOpenLightbox={(p) => setActiveLightboxProject(p)}
             />

@@ -1,0 +1,26 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Helper function to check if requesting user is an authorized admin
+    function isAuthorizedAdmin() {
+      return request.auth != null && (
+        request.auth.token.admin == true ||
+        request.auth.token.isAdmin == true ||
+        request.auth.token.email == "sheutomalli@gmail.com"
+      );
+    }
+
+    // Projects folder rules
+    match /projects/{allPaths=**} {
+      allow read: if true;
+      allow write, delete: if isAuthorizedAdmin();
+    }
+
+    // Team folder rules
+    match /team/{allPaths=**} {
+      allow read: if true;
+      allow write, delete: if isAuthorizedAdmin();
+    }
+  }
+}

@@ -179,6 +179,10 @@ export default function Footer() {
             <Link to="/quote" className="hover:text-brand-orange transition-colors font-semibold text-brand-orange">
               Request Quotation
             </Link>
+            <span>•</span>
+            <Link to="/admin" className="hover:text-cyan transition-colors text-slate-400">
+              Admin Portal
+            </Link>
           </div>
         </div>
       </div>

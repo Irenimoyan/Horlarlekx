@@ -1,16 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Breadcrumbs from '../components/Breadcrumbs';
 import SectionHeader from '../components/SectionHeader';
 import Badge from '../components/Badge';
 import Button from '../components/Button';
 import { specialistTeams, keyPersonnel } from '../data/teamData';
-import { ShieldCheck, HardHat, CheckCircle2, Layers, Frame, Box, Signpost, Wrench, Hammer, Home, Grid, ArrowRight } from 'lucide-react';
+import { getPublishedTeamMembers } from '../firebase/team';
+import { ShieldCheck, HardHat, CheckCircle2, Layers, Frame, Box, Signpost, Wrench, Hammer, Home, Grid, ArrowRight, Linkedin } from 'lucide-react';
 
 const iconMap = {
   Layers, Frame, Box, Signpost, Wrench, Hammer, Home, Grid, HardHat
 };
 
 export default function TeamPage() {
+  const [teamList, setTeamList] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTeam = async () => {
+      try {
+        const firestoreMembers = await getPublishedTeamMembers();
+        if (firestoreMembers && firestoreMembers.length > 0) {
+          setTeamList(firestoreMembers);
+        } else {
+          // Fallback to static key personnel if Firestore collection has no items yet
+          setTeamList(keyPersonnel);
+        }
+      } catch (err) {
+        console.warn('Error loading published team members:', err);
+        setTeamList(keyPersonnel);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTeam();
+  }, []);
+
   return (
     <div className="pt-28 pb-20 section-double-bg-blue text-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,29 +62,64 @@ export default function TeamPage() {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {keyPersonnel.map((person, idx) => (
-              <div
-                key={idx}
-                className="bg-navy-900/90 rounded-2xl border border-navy-800 hover:border-brand-orange/60 transition-all duration-300 shadow-lg overflow-hidden group"
-              >
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img
-                    src={person.photo}
-                    alt={person.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+            {teamList.map((person, idx) => {
+              const photo = person.photoUrl || person.photo || '/Team/Muhammed Sherrif(Site Supervisor).jpeg';
+              const name = person.name;
+              const role = person.role;
+              const bio = person.bio || person.description;
+              const linkedin = person.linkedin;
+
+              return (
+                <div
+                  key={person.id || idx}
+                  className="bg-navy-900/90 rounded-2xl border border-navy-800 hover:border-brand-orange/60 transition-all duration-300 shadow-lg overflow-hidden group flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="aspect-[4/5] overflow-hidden bg-navy-950">
+                      <img
+                        src={photo}
+                        alt={name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = '/Team/Muhammed Sherrif(Site Supervisor).jpeg';
+                        }}
+                      />
+                    </div>
+                    <div className="p-6 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <Badge variant="orange">{role}</Badge>
+                        {linkedin && (
+                          <a
+                            href={linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-1.5 rounded-lg bg-navy-950 text-slate-400 hover:text-brand-orange hover:border-brand-orange/40 border border-navy-800 transition-colors"
+                            title={`${name}'s LinkedIn Profile`}
+                          >
+                            <Linkedin className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
+                      <h3 className="text-xl font-bold text-white font-heading">
+                        {name}
+                      </h3>
+                      {bio && (
+                        <p className="text-slate-300 text-sm leading-relaxed">
+                          {bio}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  {person.yearsOfExperience && (
+                    <div className="px-6 pb-6 pt-0 text-[11px] font-mono text-slate-400">
+                      <span>Experience: <strong className="text-brand-orange">{person.yearsOfExperience} Years</strong></span>
+                    </div>
+                  )}
                 </div>
-                <div className="p-6 space-y-3">
-                  <Badge variant="orange">{person.role}</Badge>
-                  <h3 className="text-xl font-bold text-white font-heading">
-                    {person.name}
-                  </h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">
-                    {person.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

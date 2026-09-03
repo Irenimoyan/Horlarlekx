@@ -1,0 +1,37 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper function to verify if the requesting user is an authorized administrator
+    function isAuthorizedAdmin() {
+      return request.auth != null && (
+        request.auth.token.admin == true ||
+        request.auth.token.isAdmin == true ||
+        request.auth.token.email == "sheutomalli@gmail.com" ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.token.email))
+      );
+    }
+
+    // Projects collection rules
+    match /projects/{projectId} {
+      // Public visitors can read published projects; admins can read all
+      allow read: if resource.data.status == 'published' || isAuthorizedAdmin();
+      // Only authorized admins can create, update, or delete projects
+      allow create, update, delete: if isAuthorizedAdmin();
+    }
+
+    // Team Members collection rules
+    match /teamMembers/{memberId} {
+      // Public visitors can read published team members; admins can read all
+      allow read: if resource.data.status == 'published' || isAuthorizedAdmin();
+      // Only authorized admins can create, update, or delete team members
+      allow create, update, delete: if isAuthorizedAdmin();
+    }
+
+    // Administrators collection rules
+    match /admins/{adminId} {
+      // Only authorized admins can view or modify administrator allowlists
+      allow read, create, update, delete: if isAuthorizedAdmin();
+    }
+  }
+}

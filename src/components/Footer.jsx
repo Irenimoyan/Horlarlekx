@@ -126,7 +126,7 @@ export default function Footer() {
             <div className="space-y-3.5 text-sm">
               <div>
                 <span className="text-xs font-bold text-brand-orange uppercase block mb-1">
-                  Lagos Office
+                  Iju Ishaga Office
                 </span>
                 <p className="text-slate-300 text-xs leading-relaxed">
                   {companyInfo.offices[0].address}
@@ -135,7 +135,7 @@ export default function Footer() {
 
               <div>
                 <span className="text-xs font-bold text-brand-orange uppercase block mb-1">
-                  Ogun Office
+                  Dopemu Office
                 </span>
                 <p className="text-slate-300 text-xs leading-relaxed">
                   {companyInfo.offices[1].address}
@@ -169,10 +169,10 @@ export default function Footer() {
         {/* Bottom Bar & Copyright */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <div>
-            © 2026 <span className="text-slate-300 font-bold">HORLARLEKX Exterior Services</span>. All Rights Reserved.
+            © 2026 <span className="text-slate-300 font-bold">HORLAR Exterior Services</span>. All Rights Reserved.
           </div>
           <div className="flex items-center space-x-6 text-slate-400">
-            <span>Trading as HORLARLEKX EXTERIOR SERVICES</span>
+            <span>Trading as HORLAR EXTERIOR SERVICES</span>
             <span>•</span>
             <Link to="/faq" className="hover:text-brand-orange transition-colors">FAQ</Link>
             <span>•</span>

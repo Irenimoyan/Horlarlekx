@@ -18,20 +18,20 @@ export const companyInfo = {
   
   offices: [
     {
-      id: "lagos",
-      name: "Lagos Office",
-      address: "15, Osho Agoro Street, Guduba Bus Stop, Iju Ishaga, Agege, Lagos State, Nigeria",
+      id: "Ishaga",
+      name: "Ishaga Office",
+      address: "15, Osho Agoro Street, Guduba Bus Stop, Iju Ishaga, Lagos State, Nigeria",
       state: "Lagos State",
-      city: "Agege / Iju Ishaga",
+      city: "Iju Ishaga",
       isPrimary: true,
       mapLink: null // To be provided when coordinate link is supplied
     },
     {
-      id: "ogun",
-      name: "Ogun Office",
-      address: "1, Subuhanallahi Street, Balogun Phase 2, Off Atan Idi Iroko Road, Ogun State, Nigeria",
-      state: "Ogun State",
-      city: "Atan Idi Iroko",
+      id: "Dopemu",
+      name: "Dopemu Office",
+      address: "2, Ogeretedo Street, Aluminium Village, Dopemu Bus/Stop, Lagos State, Nigeria",
+      state: "Lagos State",
+      city: "Dopemu",
       isPrimary: false,
       mapLink: null // To be provided when coordinate link is supplied
     }
